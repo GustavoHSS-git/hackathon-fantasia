@@ -17,6 +17,9 @@
             <label for="nome">Nome: </label>
             <input type="text" id="nomeFantasia" name="nomeFantasia" required><br>
 
+            <label for="imagem">Foto: </label>
+            <input type="file" id="imagem" name="imagem" required><br>
+
             <label for="descricao">Descrição: </label>
             <input type="text" id="descricaoFantasia" name="descricaoFantasia" required><br>
 

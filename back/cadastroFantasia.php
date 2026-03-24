@@ -8,10 +8,11 @@ $descricaoFantasia = $_POST["descricaoFantasia"];
 $categoriaFantasia = $_POST["categoriaFantasia"];
 $valorLocacao = $_POST["valorLocacao"];
 $quantidadeDisponivel = $_POST["quantidadeDisponivel"];
+$imagem = $_POST["imagem"];
 
-$sql = "INSERT INTO fantasia (nomeFantasia, descricaoFantasia, categoriaFantasia, valorLocacao, quantidadeDisponivel) VALUES (?, ?, ?, ?, ?)";
+$sql = "INSERT INTO fantasia (nomeFantasia, descricaoFantasia, categoriaFantasia, valorLocacao, quantidadeDisponivel, imagem) VALUES (?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sssii", $nomeFantasia, $descricaoFantasia, $categoriaFantasia, $valorLocacao, $quantidadeDisponivel);
+$stmt->bind_param("sssiis", $nomeFantasia, $descricaoFantasia, $categoriaFantasia, $valorLocacao, $quantidadeDisponivel, $imagem);
 $stmt->execute();
 header("Location: ../lista/fantasia.php");
 exit;

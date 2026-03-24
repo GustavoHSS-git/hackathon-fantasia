@@ -30,6 +30,8 @@ if ($result->num_rows > 0) {
                 <th>Categoria da Fantasia</th>
                 <th>Quantidade Disponivel</th>
                 <th>Valor de Locação</th>
+                <th>Foto</th>
+
             </tr>";
     // Loop através dos resultados e exibe cada modelo
     while($row = $result->fetch_assoc()) {
@@ -39,6 +41,7 @@ if ($result->num_rows > 0) {
                 <td>" . $row["categoriaFantasia"] . "</td>
                 <td>" . $row["quantidadeDisponivel"] . "</td>
                 <td>" . $row["valorLocacao"] . "</td>
+                <td><img src='../img/'</td>
               </tr>";
     }
     echo "</table>";
