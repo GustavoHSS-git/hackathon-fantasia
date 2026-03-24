@@ -18,6 +18,7 @@
 
             <label for="senha">Senha: </label><br>
             <input type="password" name="senha" required><br>
+            
             <label for="cpf">CPF: </label><br>
             <input type="cpf" name="cpf" required><br>
 
