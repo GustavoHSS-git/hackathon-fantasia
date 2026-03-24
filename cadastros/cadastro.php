@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
     <div class="container">
@@ -12,12 +13,11 @@
             <h1 class="titulo">Cadastre-se</h1>
         </div>
             
-            <label for="nome">Nome: </label><br>
+            <label for="nome" id="Nome">Nome: </label><br>
             <input type="text" name="nomeFuncionario" required><br>
 
             <label for="senha">Senha: </label><br>
             <input type="password" name="senha" required><br>
-
             <label for="cpf">CPF: </label><br>
             <input type="cpf" name="cpf" required><br>
 
