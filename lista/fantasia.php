@@ -41,7 +41,7 @@ if ($result->num_rows > 0) {
                 <td>" . $row["categoriaFantasia"] . "</td>
                 <td>" . $row["quantidadeDisponivel"] . "</td>
                 <td>" . $row["valorLocacao"] . "</td>
-                <td><img src='../img/'</td>
+                <td><img src='../{$row['imagem']}' class='foto'></td> 
               </tr>";
     }
     echo "</table>";
