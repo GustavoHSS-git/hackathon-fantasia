@@ -7,21 +7,21 @@
 </head>
 <body>
     <div class="container">
-        <form action="back/cadastroFuncionario.php" method="post">
+        <form action="../back/locacaoFantasia.php" method="post">
         <div class="titulo">
             <h1 class="titulo">Locacão</h1>
         </div>
             
             <label for="nome" id="Nome">Nome: </label><br>
-            <input type="text" name="nomeFuncionario" required><br>
+            <input type="text" name="nomeFuncionario"><br>
 
-            <label for="dataEntrega">Data de entrega da fantasia: </label><br>
-            <input type="date" name="dataEntrega" required><br>
+            <label for="dataLocacao">Data de entrega da fantasia: </label><br>
+            <input type="date" name="dataLocacao"><br>
             
             <label for="dataDevolucao">Data de devolução da fantasia: </label><br>
-            <input type="date" name="dataDevolucao" required><br>
+            <input type="date" name="dataDevolucao"><br>
 
-            <input type="submit" value="Cadastrar" class="botaoCadastro"><br>
+            <button type="submit">Ir para pagamento</button>
         </form>
     </div>
 </body>

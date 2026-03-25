@@ -22,7 +22,7 @@
             <input type="text" name="telefone" required><br>
 
             <label for="cpfCliente">CPF: </label><br>
-            <input type="cpfCliente" name="cpfCliente" required><br>
+            <input type="cpf" name="cpfCliente" required><br>
 
             <input type="submit" value="Cadastrar" class="botaoCadastro"><br>
         </form>
