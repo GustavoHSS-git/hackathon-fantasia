@@ -8,7 +8,7 @@ $email = $_POST["email"];
 $telefone = $_POST["telefone"];
 $cpfCliente = $_POST["cpfCliente"];
 
-$sql = "INSERT INTO cliente (nomeCliente, email, telefone, cpfCliente) VALUES (?, ?, ?, ?)";
+$sql = "INSERT INTO cliente (nomeCliente, email, telefone, cpfCliente, dataCadastro) VALUES (?, ?, ?, ?, NOW())";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ssis", $nomeCliente, $email, $telefone, $cpfCliente);
 $stmt->execute();
