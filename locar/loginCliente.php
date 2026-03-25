@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Buscar Cliente</title>
+    <meta charset="UTF-8">
+    <title>Buscar Cliente</title>
 </head>
 <body>
 
