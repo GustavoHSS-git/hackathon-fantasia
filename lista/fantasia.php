@@ -28,7 +28,6 @@ if ($result->num_rows > 0) {
     echo "<div class='grid-fantasias'>";
     
     while($row = $result->fetch_assoc()) {
-<<<<<<< HEAD
         echo "
         <div class='card-fantasia'>
             <div class='foto-fantasia'>
@@ -44,16 +43,6 @@ if ($result->num_rows > 0) {
                 </div>
             </div>
         </div>";
-=======
-        echo "<tr>
-                <td>" . $row["nomeFantasia"] . "</td>
-                <td>" . $row["descricaoFantasia"] . "</td>
-                <td>" . $row["categoriaFantasia"] . "</td>
-                <td>" . $row["quantidadeDisponivel"] . "</td>
-                <td>" . $row["valorLocacao"] . "</td>
-                <td><img src='../{$row['imagem']}' class='foto'></td> 
-              </tr>";
->>>>>>> bca0c12b0f36d3a50290da94a1bbdf0f5a642449
     }
     
     echo "</div>"; // Fecha o grid-fantasias
