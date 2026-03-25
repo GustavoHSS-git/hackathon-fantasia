@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Fantasia</title>
+    <link rel="stylesheet" href="fantasia.css">
 </head>
 <body>
 <?php 
@@ -21,20 +21,30 @@ $sql = "SELECT idFantasia, nomeFantasia, descricaoFantasia, categoriaFantasia, q
 $result = $conn->query($sql);
 
 // Verifica se há modelos cadastrados
-if ($result->num_rows > 0) {
-    // Exibe os modelos em uma tabela
-    echo "<table border='1'>
-            <tr>
-                <th>Nome da Fantasia</th>
-                <th>Descricao da Fantasia</th>
-                <th>Categoria da Fantasia</th>
-                <th>Quantidade Disponivel</th>
-                <th>Valor de Locação</th>
-                <th>Foto</th>
+// ... (seu código de conexão acima)
 
-            </tr>";
-    // Loop através dos resultados e exibe cada modelo
+if ($result->num_rows > 0) {
+    // Container principal do Grid
+    echo "<div class='grid-fantasias'>";
+    
     while($row = $result->fetch_assoc()) {
+<<<<<<< HEAD
+        echo "
+        <div class='card-fantasia'>
+            <div class='foto-fantasia'>
+                <img type='image/png'src='../img/" . $row["imagem"] . "' alt='" . $row["nomeFantasia"] . "'>
+            </div>
+            <div class='info-fantasia'>
+                <h3>" . $row["nomeFantasia"] . "</h3>
+                <p class='categoria'>" . $row["categoriaFantasia"] . "</p>
+                <p class='descricao'>" . $row["descricaoFantasia"] . "</p>
+                <div class='detalhes-footer'>
+                    <span class='estoque'>Qtd: " . $row["quantidadeDisponivel"] . "</span>
+                    <span class='preco'>R$ " . number_format($row["valorLocacao"], 2, ',', '.') . "</span>
+                </div>
+            </div>
+        </div>";
+=======
         echo "<tr>
                 <td>" . $row["nomeFantasia"] . "</td>
                 <td>" . $row["descricaoFantasia"] . "</td>
@@ -43,11 +53,14 @@ if ($result->num_rows > 0) {
                 <td>" . $row["valorLocacao"] . "</td>
                 <td><img src='../{$row['imagem']}' class='foto'></td> 
               </tr>";
+>>>>>>> bca0c12b0f36d3a50290da94a1bbdf0f5a642449
     }
-    echo "</table>";
+    
+    echo "</div>"; // Fecha o grid-fantasias
 } else {
     echo "Nenhuma fantasia cadastrada.";
 }
+
 // Fecha a conexão com o banco de dados
 $conn->close();
 ?>
