@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Locação de Fantasia</title>
+<meta charset="UTF-8">
+<title>Locação de Fantasia</title>
 </head>
 <body>
 
 <?php
 require_once("../conex.php");
-
 $fantasiaEncontrada = false;
 $calculoRealizado = false;
+$cpfCliente = "";
 
+if (isset($_POST['cpfCliente'])) {
+    $cpfCliente = $_POST['cpfCliente'];
+}
 if (isset($_POST['buscar'])) {
     $id = $_POST['idFantasia'];
     $sql = "SELECT idFantasia, nomeFantasia, valorLocacao
@@ -30,7 +33,6 @@ if (isset($_POST['buscar'])) {
     }
 
 }
-
 if (isset($_POST['calcular'])) {
     $idFantasia = $_POST['idFantasia'];
     $nomeFantasia = $_POST['nomeFantasia'];
@@ -49,11 +51,17 @@ if (isset($_POST['calcular'])) {
 ?>
 
 <?php if (!$fantasiaEncontrada && !$calculoRealizado): ?>
+
 <h2>Buscar fantasia pelo ID</h2>
-    <form method="POST">ID da Fantasia:<br>
+
+<form method="POST">
+
+    <input type="hidden" name="cpfCliente" value="<?php echo $cpfCliente; ?>">ID da Fantasia:<br>
     <input type="number" name="idFantasia" required><br><br>
     <button type="submit" name="buscar">Buscar Fantasia</button>
-    </form>
+
+</form>
+
 <?php endif; ?>
 
 <?php if ($fantasiaEncontrada): ?>
@@ -68,19 +76,20 @@ Valor da diária:
 
 R$
 
-<?php echo $fantasia['valorDiaria']; ?>
+<?php echo $fantasia['valorLocacao']; ?><br><br>
 
-<br><br>
 <form method="POST">
+
+    <input type="hidden" name="cpfCliente" value="<?php echo $cpfCliente; ?>">
     <input type="hidden" name="idFantasia" value="<?php echo $fantasia['idFantasia']; ?>">
     <input type="hidden" name="nomeFantasia" value="<?php echo $fantasia['nomeFantasia']; ?>">
-    <input type="hidden"name="valorDiaria"value="<?php echo $fantasia['valorDiaria']; ?>">
+    <input type="hidden" name="valorLocacao" value="<?php echo $fantasia['valorLocacao']; ?>">
 
-Data de locação:<br>
+    Data de locação:<br>
 
     <input type="date" name="dataLocacao" required><br><br>
 
-Data de devolução:<br>
+    Data de devolução:<br>
 
     <input type="date" name="dataDevolucao" required><br><br>
     <button type="submit" name="calcular">Calcular valor</button>
@@ -90,35 +99,36 @@ Data de devolução:<br>
 <?php endif; ?>
 
 <?php if ($calculoRealizado): ?>
+    <h2>Resumo da locação</h2>
 
-<h2>Resumo da locação</h2>
+    Dias alugados:
 
-Fantasia:
+    <?php echo $dias; ?><br><br>
 
-<?php echo $nomeFantasia; ?><br><br>
+    Valor da diária:
 
-Dias alugados:
+    R$
 
-<?php echo $dias; ?><br><br>
+    <?php echo $valorDiaria; ?><br><br>
 
-Valor da diária:
+    Valor total:
 
-R$
+    R$
 
-<?php echo $valorDiaria; ?><br><br>
+    <?php echo $valorTotal; ?><br><br>
 
-Valor total:
+<form action="pagamento.php" method="POST">
 
-R$
+    <input type="hidden" name="cpfCliente" value="<?php echo $cpfCliente; ?>">
+    <input type="hidden" name="idFantasia" value="<?php echo $idFantasia; ?>">
+    <input type="hidden" name="dataLocacao" value="<?php echo $_POST['dataLocacao']; ?>">
+    <input type="hidden" name="dataDevolucao" value="<?php echo $_POST['dataDevolucao']; ?>">
+    <input type="hidden" name="dias" value="<?php echo $dias; ?>">
+    <input type="hidden" name="valorTotal" value="<?php echo $valorTotal; ?>">
 
-<?php echo $valorTotal; ?><br><br>
+    <button type="submit">Ir para pagamento</button>
 
-    <form action="pagamento.php" method="POST">
-        <input type="hidden" name="idFantasia" value="<?php echo $idFantasia; ?>">
-        <input type="hidden" name="dias" value="<?php echo $dias; ?>">
-        <input type="hidden" name="valorTotal" value="<?php echo $valorTotal; ?>">
-        <button type="submit">Ir para pagamento</button>
-    </form>
+</form>
 
 <?php endif; ?>
 

@@ -1,11 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento</title>
 </head>
 <body>
-    <h1>Formas de Pagamento</h1>
+
+<?php
+
+require_once("../conex.php");
+
+$pagamentoRealizado = false;
+
+
+if (isset($_POST['confirmarPagamento'])) {
+    $dataLocacao    = $_POST['dataLocacao'];
+    $dataDevolucao  = $_POST['dataDevolucao'];
+    $dias           = $_POST['dias'];
+    $valorTotal     = $_POST['valorTotal'];
+    $formaPagamento = $_POST['formaPagamento'];
+    $idFantasia     = $_POST['idFantasia'];
+    $cpfCliente     = $_POST['cpfCliente'];
+
+    $sql = "INSERT INTO locacao (cpfCliente, idFantasia, dataLocacao, dataDevolucao, dias, formaPagamento, valorTotal) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sissisd", $cpfCliente, $idFantasia, $dataLocacao, $dataDevolucao, $dias, $formaPagamento, $valorTotal);
+    $stmt->execute();
+    $pagamentoRealizado = true;
+}
+
+?>
+<?php if (!$pagamentoRealizado): ?>
+
+    <h2>Pagamento</h2>
+
+    Valor total:
+
+    R$
+
+    <?php echo $_POST['valorLocacao']; ?><br><br>
+
+    Escolha a forma de pagamento:
+
+    <form method="POST">
+
+        <!-- Enviando os dados escondidos para o PHP -->
+
+        <input type="hidden" name="dataLocacao" value="<?php echo $_POST['dataLocacao']; ?>">
+
+        <input type="hidden" name="dataDevolucao" value="<?php echo $_POST['dataDevolucao']; ?>">
+
+        <input type="hidden" name="dias" value="<?php echo $_POST['dias']; ?>">
+
+        <input type="hidden" name="valorTotal" value="<?php echo $_POST['valorLocacao']; ?>">
+
+        <input type="hidden" name="idFantasia" value="<?php echo $_POST['idFantasia']; ?>">
+
+        <input type="hidden" name="cpfCliente" value="<?php echo $_POST['cpfCliente']; ?>">
+
+        <input type="radio" name="formaPagamento" value="PIX" required>
+
+        PIX
+
+        <br>
+
+        <input type="radio" name="formaPagamento" value="Dinheiro" required>
+
+        Dinheiro
+
+        <br><br>
+
+        <button type="submit" name="confirmarPagamento">Confirmar pagamento</button>
+
+    </form>
+
+<?php else: ?>
+
+    <h2>Locação registrada com sucesso!</h2>
+
+    Data de locação:
+
+    <?php echo $dataLocacao; ?>
+
+    <br><br>
+
+    Data de devolução:
+
+    <?php echo $dataDevolucao; ?>
+
+    <br><br>
+
+    Dias:
+
+    <?php echo $dias; ?>
+
+    <br><br>
+
+    Forma de pagamento:
+
+    <?php echo $formaPagamento; ?>
+
+    <br><br>
+
+    Valor pago:
+
+    R$
+
+    <?php echo $valorTotal; ?>
+
+    <br><br>
+
+    <a href="loginCliente.php">Nova locação</a>
+
+<?php endif; ?>
+
 </body>
 </html>
