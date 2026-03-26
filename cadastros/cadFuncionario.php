@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
+    <nav>
+        <a href="../telainicial/menu.php">Menu Principal</a> | 
+        <a href="cadCliente.php">Cadastrar Cliente</a> | 
+        <a href="cadFantasia.php">Cadastrar Fantasia</a>
+    </nav>
     <div class="container">
-        <form action="back/cadastroFuncionario.php" method="post">
+        <form action="../back/cadastroFuncionario.php" method="post">
         <div class="titulo">
             <h1 class="titulo">Cadastre-se</h1>
         </div>

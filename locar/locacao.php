@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Locação de Fantasia</title>
+    <link rel="stylesheet" href=">
 </head>
 <body>
+    <nav>
+        <a href="../telainicial/menu.php">Menu Principal</a> | 
+        <a href="loginCliente.php">Buscar Cliente</a> | 
+        <a href="pagamento.php">Pagamentos</a>
+    </nav>
+    <h1>Locação de Fantasia</h1>
 
 <?php
 require_once("../conex.php");

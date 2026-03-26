@@ -6,6 +6,11 @@
     <title>Cadastro de Clientes</title>
 </head>
 <body>
+    <nav>
+        <a href="../telainicial/menu.php">Menu Principal</a> | 
+        <a href="cadFantasia.php">Cadastrar Fantasia</a> | 
+        <a href="cadFuncionario.php">Cadastrar Funcionário</a>
+    </nav>
     <div class="container">
         <form action="../back/cadastroCliente.php" method="post">
         <div class="titulo">

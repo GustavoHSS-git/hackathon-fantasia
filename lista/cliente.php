@@ -6,10 +6,11 @@
     <title>Lista de Clientes</title>
 </head>
 <body>
-<?php 
-    include_once('../menu.php');
-?>
-<h2>Lista de Fantasias Cadastradas</h2>
+    <nav>
+        <a href="../telainicial/menu.php">Menu Principal</a> | 
+        <a href="fantasia.php">Listar Fantasias</a>
+    </nav>
+<h2>Lista de Clientes Cadastrados</h2>
 <?php
 // Inclui o arquivo de conexão com o banco de dados
 require('../conex.php');

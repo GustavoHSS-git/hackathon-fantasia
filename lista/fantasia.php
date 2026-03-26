@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="fantasia.css">
 </head>
 <body>
-<?php 
-    include_once('../menu.php');
-?>
+    <nav>
+        <a href="../telainicial/menu.php">Menu Principal</a> | 
+        <a href="cliente.php">Listar Clientes</a>
+    </nav>
 <h2>Lista de Fantasias Cadastradas</h2>
 <?php
 // Inclui o arquivo de conexão com o banco de dados

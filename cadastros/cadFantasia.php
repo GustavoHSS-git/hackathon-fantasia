@@ -6,11 +6,12 @@
     <title>Fantasia</title>
 </head>
 <body>
-    <?php 
-    include("../back/cadastroFantasia.php");
-    ?>
-
-    <h1>Fantasia</h1>
+    <nav>
+        <a href="../telainicial/menu.php">Menu Principal</a> | 
+        <a href="cadCliente.php">Cadastrar Cliente</a> | 
+        <a href="cadFuncionario.php">Cadastrar Funcionário</a>
+    </nav>
+    <h1>Cadastro de Fantasia</h1>
 
     <form action="../back/cadastroFantasia.php" method="post">
         <div>
