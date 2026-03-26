@@ -5,6 +5,12 @@
     <title>Buscar Cliente</title>
 </head>
 <body>
+    <nav>
+        <a href="../telainicial/menu.php">Menu Principal</a> | 
+        <a href="locacao.php">Locação</a> | 
+        <a href="pagamento.php">Pagamentos</a>
+    </nav>
+    <h1>Buscar Cliente</h1>
 
 <?php
 

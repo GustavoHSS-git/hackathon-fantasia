@@ -6,17 +6,27 @@
 <link rel="stylesheet" href="fantasia.css">
 </head>
 <body>
-<script src="fantasia.js"></script>
+<<<<<<< HEAD
+    <nav>
+        <a href="../telainicial/menu.php">Menu Principal</a> | 
+        <a href="cliente.php">Listar Clientes</a>
+    </nav>
+=======
 <main>
 
 <?php 
 include_once('../menu.php');
 ?>
+>>>>>>> 7bc7033e23dc1384a35936213573b540982fa568
 <h2>Lista de Fantasias Cadastradas</h2>
 <?php
 
 require('../conex.php');
 
+<<<<<<< HEAD
+// Consulta SQL para selecionar todos os modelos
+=======
+>>>>>>> 7bc7033e23dc1384a35936213573b540982fa568
 $sql = "SELECT idFantasia, nomeFantasia, descricaoFantasia, categoriaFantasia, quantidadeDisponivel, valorLocacao, imagem
         FROM fantasia 
         ORDER BY nomeFantasia";

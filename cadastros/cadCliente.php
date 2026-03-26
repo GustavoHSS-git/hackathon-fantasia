@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Clientes</title>
+    <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
+    <nav>
+        <a href="../telainicial/menu.php">Menu Principal</a> | 
+        <a href="cadFantasia.php">Cadastrar Fantasia</a> | 
+        <a href="cadFuncionario.php">Cadastrar Funcionário</a>
+    </nav>
     <div class="container">
         <form action="../back/cadastroCliente.php" method="post">
         <div class="titulo">

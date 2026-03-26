@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fantasia</title>
+    <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
-    <?php 
-    include("../back/cadastroFantasia.php");
-    ?>
+    <nav>
+        <a href="../telainicial/menu.php">Menu Principal</a> | 
+        <a href="cadCliente.php">Cadastrar Cliente</a> | 
+        <a href="cadFuncionario.php">Cadastrar Funcionário</a>
+    </nav>
 
-    <h1>Fantasia</h1>
+    <div class="container">
 
+        <h1>Cadastro de Fantasia</h1>
     <form action="../back/cadastroFantasia.php" method="post">
         <div>
             <label for="nome">Nome: </label>
@@ -35,5 +39,6 @@
             <button type="submit">Enviar</button>
         </div>
     </form>
+    </div>
 </body>
 </html>
