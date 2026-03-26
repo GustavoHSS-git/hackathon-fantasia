@@ -6,7 +6,9 @@
 <link rel="stylesheet" href="fantasia.css">
 </head>
 <body>
+<script src="fantasia.js"></script>
 <main>
+
 <?php 
 include_once('../menu.php');
 ?>
@@ -71,11 +73,5 @@ if ($result->num_rows > 0) {
 $conn->close();
 ?>
 </main>
-<script>
-function copiarId(id) {
-    navigator.clipboard.writeText(id);
-    alert("ID copiado: " + id);
-}
-</script>
 </body>
 </html>
