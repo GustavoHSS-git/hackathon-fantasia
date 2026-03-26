@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --accent: #4e6b3a;      
+    --bg-card: #ffffff;
+    --text-dark: #333;
+    --shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Alinha o H1 em cima do Grid */
+    align-items: center;
+    justify-content: flex-start;
+    padding: 60px 20px;
+    min-height: 100vh;
+    background: linear-gradient(180deg,#493d3f 0%, #463b3c 100%);
+    margin: 0;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 50px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 2.2rem;
+    font-family: 'Inter', sans-serif;
+    padding: 15px 30px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    
+}
+
+/* --- GRID DE SEÇÕES --- */
+.menu-container { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px; /* Largura máxima do painel */
+    margin: 0 auto;
+}
+
+.container {
+    padding: 30px;
+    border-radius: 15px;
+    width: 95%;
+    max-width: 1200px; 
+
+    /*padding: 30px;*/
+    margin: 40px auto; 
+    border-radius: 15px; 
+    background: linear-gradient(180deg,#463b3c 0%, #463b3c 100%);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.199);
+    transition: all 0.3s ease;
+}
+
+/* --- ESTILIZAÇÃO DOS CARDS --- */
+.section {
+    background: var(--bg-card);
+    /* Removido width fixo para funcionar com o grid */
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-top: 6px solid var(--accent);
+    display: flex;
+    flex-direction: column;
+}
+
+.section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.section h2 {
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 12px;
+    font-family: 'Inter', sans-serif;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section li {
+    margin-bottom: 15px;
+}
+
+.section a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 600;
+    font-size: 1.05rem;
+    display: block;
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    background: #f8f9fa;
+    border: 1px solid transparent;
+}
+
+.section a:hover {
+    background: var(--accent);
+    color: white;
+    padding-left: 22px;
+    box-shadow: 0 4px 12px rgba(78, 107, 58, 0.2);
+}
+
+/* Destaque para o Logout */
+.section ul li a[href*="login.php"] {
+    color: #c9302c;
+    background: #fff5f5;
+}
+
+.section ul li a[href*="login.php"]:hover {
+    background: #d9534f;
+    color: white;
+}
+
+/* Responsividade para Telas Pequenas */
+@media (max-width: 768px) {
+    .menu-container {
+        grid-template-columns: 1fr; /* Um card por linha no celular */
+        padding: 0 10px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+}

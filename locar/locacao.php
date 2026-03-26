@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Locação de Fantasia</title>
-    <link rel="stylesheet" href=">
+    <link rel="stylesheet" href="">
 </head>
 <body>
     <nav>
@@ -75,13 +75,13 @@ Valor da diária:
 
 R$
 
-<?php echo $fantasia['valorDiaria']; ?>
+<?php echo $fantasia['valorLocacao']; ?>
 
 <br><br>
 <form method="POST">
     <input type="hidden" name="idFantasia" value="<?php echo $fantasia['idFantasia']; ?>">
     <input type="hidden" name="nomeFantasia" value="<?php echo $fantasia['nomeFantasia']; ?>">
-    <input type="hidden"name="valorDiaria"value="<?php echo $fantasia['valorDiaria']; ?>">
+    <input type="hidden"name="valorDiaria"value="<?php echo $fantasia['valorLocacao']; ?>">
 
 Data de locação:<br>
 

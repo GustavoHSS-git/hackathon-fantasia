@@ -1,11 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
 
-/* ============================================
-   VARIÁVEIS CSS GLOBAIS
-   ============================================ */
-/* Cores e sombras reutilizáveis em todo o login.
-   --accent: azul principal (inputs, botão, links)
-   --shadow-*: sombras em diferentes intensidades */
 :root {
     --accent: #4e6b3a;      /* Azul principal */
     --muted: #999;          /* Cinza para texto secundário */

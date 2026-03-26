@@ -16,7 +16,7 @@
 require('../conex.php');
 
 // Consulta SQL para selecionar todos os modelos
-$sql = "SELECT idFantasia, nomeFantasia, descricaoFantasia, categoriaFantasia, quantidadeDisponivel, valorLocacao
+$sql = "SELECT idFantasia, nomeFantasia, descricaoFantasia, categoriaFantasia, quantidadeDisponivel, valorLocacao, imagem
         FROM fantasia 
         ORDER BY nomeFantasia, descricaoFantasia, categoriaFantasia, quantidadeDisponivel, valorLocacao";
 $result = $conn->query($sql);

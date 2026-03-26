@@ -85,10 +85,11 @@
 
 // Reportar erros para ajudar a descobrir se o banco falhar
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     try {
-        require_once("conex.php");
+        require_once("../conex.php");
 
         // Pegamos o 'email' pois é o que definimos no formulário
         $cpf = $_POST['cpf'] ?? '';
@@ -102,6 +103,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $result = mysqli_stmt_get_result($stmt);
 
         if (mysqli_num_rows($result) > 0) {
+            $_SESSION['usuario_logado'] = true;
+            $_SESSION['cpf'] = $cpf;
             // Tente este caminho. Se não funcionar, verifique se a pasta se chama 'telainicial'
             header("Location: ../telainicial/menu.php");
             exit();

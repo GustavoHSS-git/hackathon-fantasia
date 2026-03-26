@@ -1,6 +1,6 @@
-/* ============================================
-   VARIÁVEIS E RESETS (Essenciais para a Navbar)
-   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+
 :root {
     --primary-color: #4e6b3a;      /* Cor azul principal */
     --secondary-color: #F0EA3E;    /* Cor secundária (hover botão) */
