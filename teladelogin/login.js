@@ -46,17 +46,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Validação final no envio do formulário
     if (loginForm) {
-        loginForm.addEventListener('submit', (e) => {
+        loginForm.addEventListener('submit'), (e) => {
             const cpf = cpfInput.value.trim();
             const password = passwordInput.value;
 
-            if (cpf === '' || password.length < 3) {
-                e.preventDefault(); // Impede o envio se houver erro
-                showNotification('Preencha os campos corretamente!', 'error');
+            // No seu login.js, esta parte valida o envio:
+            if (cpf === '' || password.length < 3) { 
+            e.preventDefault(); // Se cair aqui, o formulário não é enviado ao PHP
+            showNotification('Preencha os campos corretamente!', 'error');
+                }
             }
+        }
         });
-    }
-});
 
 // Função para exibir notificações visuais
 function showNotification(message, type = 'info') {
