@@ -29,6 +29,7 @@ if ($result->num_rows > 0) {
                 <th>Email do Cliente</th>
                 <th>Telefone do Cliente</th>
                 <th>CPF do Cliente</th>
+                <th>Ações</th>
             </tr>";
     // Loop através dos resultados e exibe cada modelo
     while($row = $result->fetch_assoc()) {
@@ -37,6 +38,14 @@ if ($result->num_rows > 0) {
                 <td>" . $row["email"] . "</td>
                 <td>" . $row["telefone"] . "</td>
                 <td>" . $row["cpfCliente"] . "</td>
+                <td>
+                    <a href='../funcao/editarCliente.php?id=" . $row["idCliente"] . "'>
+                        <button>Atualizar</button>
+                    </a>
+
+                    <a href='../funcao/excluirCliente.php?id=" . $row["idCliente"] . "'>
+                        <button>Excluir</button>
+                </td>
               </tr>";
     }
     echo "</table>";

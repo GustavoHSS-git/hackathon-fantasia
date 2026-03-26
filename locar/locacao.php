@@ -36,7 +36,7 @@ if (isset($_POST['buscar'])) {
 if (isset($_POST['calcular'])) {
     $idFantasia = $_POST['idFantasia'];
     $nomeFantasia = $_POST['nomeFantasia'];
-    $valorDiaria = $_POST['valorLocacao'];
+    $valorLocacao = $_POST['valorLocacao'];
     $dataLocacao = new DateTime($_POST['dataLocacao']);
     $dataDevolucao = new DateTime($_POST['dataDevolucao']);
     $diferenca = $dataLocacao->diff($dataDevolucao);
@@ -83,7 +83,7 @@ R$
     <input type="hidden" name="cpfCliente" value="<?php echo $cpfCliente; ?>">
     <input type="hidden" name="idFantasia" value="<?php echo $fantasia['idFantasia']; ?>">
     <input type="hidden" name="nomeFantasia" value="<?php echo $fantasia['nomeFantasia']; ?>">
-    <input type="hidden" name="valorLocacao" value="<?php echo $fantasia['valorLocacao']; ?>">
+    <input type="hidden" name="valorTotal" value="<?php echo $fantasia['valorTotal']; ?>">
 
     Data de locação:<br>
 
@@ -109,7 +109,7 @@ R$
 
     R$
 
-    <?php echo $valorDiaria; ?><br><br>
+    <?php echo $fantasia ['valorLocacao']; ?><br><br>
 
     Valor total:
 

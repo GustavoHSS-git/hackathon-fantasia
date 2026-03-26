@@ -1,57 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="fantasia.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="fantasia.css">
 </head>
 <body>
+<main>
 <?php 
-    include_once('../menu.php');
+include_once('../menu.php');
 ?>
 <h2>Lista de Fantasias Cadastradas</h2>
 <?php
-// Inclui o arquivo de conexão com o banco de dados
+
 require('../conex.php');
 
-// Consulta SQL para selecionar todos os modelos
-$sql = "SELECT idFantasia, nomeFantasia, descricaoFantasia, categoriaFantasia, quantidadeDisponivel, valorLocacao
+$sql = "SELECT idFantasia, nomeFantasia, descricaoFantasia, categoriaFantasia, quantidadeDisponivel, valorLocacao, imagem
         FROM fantasia 
-        ORDER BY nomeFantasia, descricaoFantasia, categoriaFantasia, quantidadeDisponivel, valorLocacao";
+        ORDER BY nomeFantasia";
 $result = $conn->query($sql);
 
-// Verifica se há modelos cadastrados
-// ... (seu código de conexão acima)
-
 if ($result->num_rows > 0) {
-    // Container principal do Grid
     echo "<div class='grid-fantasias'>";
-    
+
     while($row = $result->fetch_assoc()) {
+
         echo "
         <div class='card-fantasia'>
             <div class='foto-fantasia'>
-                <img type='image/png'src='../img/" . $row["imagem"] . "' alt='" . $row["nomeFantasia"] . "'>
+                <img src='../img/" . $row["imagem"] . "' alt='" . $row["nomeFantasia"] . "'>
             </div>
             <div class='info-fantasia'>
                 <h3>" . $row["nomeFantasia"] . "</h3>
-                <p class='categoria'>" . $row["categoriaFantasia"] . "</p>
-                <p class='descricao'>" . $row["descricaoFantasia"] . "</p>
+                <p class='categoria'>
+                    " . $row["categoriaFantasia"] . "
+                </p>
+                <p class='descricao'>
+                    " . $row["descricaoFantasia"] . "
+                </p>
+                <p class='id'>
+                    ID: " . $row["idFantasia"] . "
+                    <button onclick='copiarId(" . $row["idFantasia"] . ")'>
+                        Copiar
+                    </button>
+                </p>
                 <div class='detalhes-footer'>
-                    <span class='estoque'>Qtd: " . $row["quantidadeDisponivel"] . "</span>
-                    <span class='preco'>R$ " . number_format($row["valorLocacao"], 2, ',', '.') . "</span>
+                    <span class='estoque'>
+                        Qtd: " . $row["quantidadeDisponivel"] . "
+                    </span>
+                    <span class='preco'>
+                        R$ " . number_format($row["valorLocacao"], 2, ',', '.') . "
+                    </span>
+                </div>
+                <div class='botoes'>
+                    <a href='../funcao/editarFantasia.php?id=" . $row["idFantasia"] . "'>
+                        <button>Editar</button>
+                    </a>
+
+                    <a href='../funcao/excluirFantasia.php?id=" . $row["idFantasia"] . "' onclick='return confirm(\"Deseja excluir esta fantasia?\")'>
+                        <button>Excluir</button>
+                    </a>
                 </div>
             </div>
         </div>";
     }
-    
-    echo "</div>"; // Fecha o grid-fantasias
+    echo "</div>";
 } else {
     echo "Nenhuma fantasia cadastrada.";
 }
-
-// Fecha a conexão com o banco de dados
 $conn->close();
 ?>
+</main>
+<script>
+function copiarId(id) {
+    navigator.clipboard.writeText(id);
+    alert("ID copiado: " + id);
+}
+</script>
 </body>
 </html>
