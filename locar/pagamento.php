@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="locacao.css">
 </head>
 <body>
-    <h1>Pagamento</h1>
+    <h1 class="h1pag">Pagamento</h1>
 
     <div class="container">
 <?php

@@ -12,8 +12,8 @@
         <a href="locacao.php">Locação</a> | 
         <a href="pagamento.php">Pagamentos</a>
     </nav>
-8
-    <h1>Locação de Fantasia</h1>
+    
+    <h1 class="h1loc">Locação de Fantasia</h1>
 
     <div class="container">
 

@@ -5,14 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="cadastro.css">
-    <link rel="stylesheet" href="cadastro.css">
 </head>
 <body>
-    <nav>
-        <a href="../telainicial/menu.php">Menu Principal</a> | 
-        <a href="cadCliente.php">Cadastrar Cliente</a> | 
-        <a href="cadFantasia.php">Cadastrar Fantasia</a>
-    </nav>
     <div class="container">
         <form action="../back/cadastroFuncionario.php" method="post">
         <div class="titulo">

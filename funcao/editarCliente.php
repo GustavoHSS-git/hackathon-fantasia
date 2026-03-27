@@ -25,6 +25,7 @@ if (!$cliente) {
 <head>
 <meta charset="UTF-8">
 <title>Editar cliente</title>
+<link rel="stylesheet" href="../cadastros/cadastro.css">
 </head>
 <body>
 <h2>Editar cliente</h2>

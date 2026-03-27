@@ -12,6 +12,8 @@ $id = $_GET['id'];
 <head>
 <meta charset="UTF-8">
 <title>Excluir cliente</title>
+<link rel="stylesheet" href="../cadastros/cadastro.css">
+
 </head>
 <body>
 <h2>Excluir cliente</h2>
@@ -23,9 +25,9 @@ $id = $_GET['id'];
 
     <button type="submit" name="excluir">Excluir</button>
 
-<a href="../lista/cliente.php">
-    <button type="button">Cancelar</button>
-</a>
+
+    <button type="btn-cancelar">Cancelar</button>
+
 </form>
 
 </body>

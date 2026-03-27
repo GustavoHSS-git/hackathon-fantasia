@@ -15,7 +15,7 @@
 
     <div class="container">
 
-        <h1>Cadastro de Fantasia</h1>
+        <h1 class="h1fantasia">Cadastro de Fantasia</h1>
     <form action="../back/cadastroFantasia.php" method="post">
         <div>
             <label for="nome">Nome: </label>

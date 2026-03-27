@@ -20,7 +20,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-body);
+    background-color: #ecf3ff;
     color: var(--text-dark);
     line-height: 1.6;
     padding: 20px;

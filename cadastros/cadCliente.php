@@ -13,8 +13,10 @@
         <a href="cadFuncionario.php">Cadastrar Funcionário</a>
     </nav>
     <div class="titulo">
-    <h1 class="titulo">Cadastro de Clientes</h1>
+
+    
     <div class="container">
+        <h1 class="titulo">Cadastro de Clientes</h1>
         <div class="titulo">
         </div>
 
