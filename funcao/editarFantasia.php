@@ -76,7 +76,7 @@ if (isset($_POST['salvar'])) {
     WHERE idFantasia = ?
     ");
 
-    $stmt->bind_param("sssidi", $nome, $imagem, $descricao, $categoria, $quantidade, $valor, $id);
+    $stmt->bind_param("ssssidi", $nome, $imagem, $descricao, $categoria, $quantidade, $valor, $id);
 
     $stmt->execute();
 

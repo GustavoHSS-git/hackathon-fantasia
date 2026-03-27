@@ -12,7 +12,7 @@ $imagem = $_POST["imagem"];
 
 $sql = "INSERT INTO fantasia (nomeFantasia, descricaoFantasia, categoriaFantasia, valorLocacao, quantidadeDisponivel, imagem) VALUES (?, ?, ?, ?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sssiis", $nomeFantasia, $descricaoFantasia, $categoriaFantasia, $valorLocacao, $quantidadeDisponivel, $imagem);
+$stmt->bind_param("sssids", $nomeFantasia, $descricaoFantasia, $categoriaFantasia, $valorLocacao, $quantidadeDisponivel, $imagem);
 $stmt->execute();
 header("Location: ../lista/fantasia.php");
 exit;

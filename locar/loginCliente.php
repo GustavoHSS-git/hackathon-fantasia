@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Buscar Cliente</title>
+    <link rel="stylesheet" href="locacao.css">
 </head>
 <body>
     <nav>

@@ -36,15 +36,12 @@
             <h2>Locação</h2>
             <ul>
                 <li><a href="../locar/locacao.php">Realizar Locação</a></li>
-                <li><a href="../locar/loginCliente.php">Buscar Cliente</a></li>
-                <li><a href="../locar/pagamento.php">Pagamentos</a></li>
             </ul>
         </div>
 
         <div class="section">
             <h2>Outros</h2>
             <ul>
-                <li><a href="index.html">Tela Inicial</a></li>
                 <li><a href="../teladelogin/login.php">Sair</a></li>
             </ul>
         </div>
