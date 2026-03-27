@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Pagamento</title>
+    <link rel="stylesheet" href="locacao.css">
 </head>
 <body>
+    <h1>Pagamento</h1>
 
+    <div class="container">
 <?php
 
 require_once("../conex.php");
@@ -38,7 +41,7 @@ if (isset($_POST['confirmarPagamento'])) {
 
     R$
 
-    <?php echo $_POST['valorLocacao']; ?><br><br>
+    <?php echo $_POST['valorTotal']; ?><br><br>
 
     Escolha a forma de pagamento:
 
@@ -52,21 +55,23 @@ if (isset($_POST['confirmarPagamento'])) {
 
         <input type="hidden" name="dias" value="<?php echo $_POST['dias']; ?>">
 
-        <input type="hidden" name="valorTotal" value="<?php echo $_POST['valorLocacao']; ?>">
+        <input type="hidden" name="valorTotal" value="<?php echo $_POST['valorTotal']; ?>">
 
         <input type="hidden" name="idFantasia" value="<?php echo $_POST['idFantasia']; ?>">
 
         <input type="hidden" name="cpfCliente" value="<?php echo $_POST['cpfCliente']; ?>">
 
-        <input type="radio" name="formaPagamento" value="PIX" required>
 
-        PIX
-
+       
         <br>
+        <div = class="form-group">
+            <h3>Pix <input type="radio" name="formaPagamento" value="Pix" required></h3>
+        </div>
 
-        <input type="radio" name="formaPagamento" value="Dinheiro" required>
-
-        Dinheiro
+        
+        <div = class="form-group">
+            <h3>Dinheiro <input type="radio" name="formaPagamento" value="Dinheiro" required></h3>
+        </div>
 
         <br><br>
 

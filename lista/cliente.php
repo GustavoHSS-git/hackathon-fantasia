@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Clientes</title>
+    <link rel="stylesheet" href="../cadastros/listacliente.css">
 </head>
 <body>
     <nav>
         <a href="../telainicial/menu.php">Menu Principal</a> | 
         <a href="fantasia.php">Listar Fantasias</a>
     </nav>
-<h2>Lista de Clientes Cadastrados</h2>
+    <div class="container">
+<h1>Lista de Clientes Cadastrados</h1>
 <?php
-// Inclui o arquivo de conexão com o banco de dados
+
 require('../conex.php');
 
 // Consulta SQL para selecionar todos os modelos
@@ -37,7 +39,8 @@ if ($result->num_rows > 0) {
         echo "<tr>
                 <td>" . $row["nomeCliente"] . "</td>
                 <td>" . $row["email"] . "</td>
-                <td>" . $row["telefone"] . "</td>
+                <td>" 
+                . $row["telefone"] . "</td>
                 <td>" . $row["cpfCliente"] . "</td>
                 <td>
                     <a href='../funcao/editarCliente.php?id=" . $row["idCliente"] . "'>

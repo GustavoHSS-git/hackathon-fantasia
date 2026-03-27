@@ -12,11 +12,13 @@
         <a href="cadFantasia.php">Cadastrar Fantasia</a> | 
         <a href="cadFuncionario.php">Cadastrar Funcionário</a>
     </nav>
+    <div class="titulo">
+    <h1 class="titulo">Cadastro de Clientes</h1>
     <div class="container">
-        <form action="../back/cadastroCliente.php" method="post">
         <div class="titulo">
-            <h1 class="titulo">Cadastro de Clientes</h1>
         </div>
+
+        <form action="../back/cadastroCliente.php" method="post">
             
             <label for="nomeCliente" id="Nome">Nome do Cliente: </label><br>
             <input type="text" name="nomeCliente" required><br>

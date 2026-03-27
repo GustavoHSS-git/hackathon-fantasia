@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Locação de Fantasia</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="locacao.css">
 </head>
 <body>
+
     <nav>
         <a href="../telainicial/menu.php">Menu Principal</a> | 
-        <a href="loginCliente.php">Buscar Cliente</a> | 
+        <a href="locacao.php">Locação</a> | 
         <a href="pagamento.php">Pagamentos</a>
     </nav>
+8
     <h1>Locação de Fantasia</h1>
+
+    <div class="container">
 
 <?php
 require_once("../conex.php");
@@ -116,7 +120,7 @@ R$
 
     R$
 
-    <?php echo $fantasia ['valorLocacao']; ?><br><br>
+    <?php echo $valorLocacao; ?><br><br>
 
     Valor total:
 
@@ -138,6 +142,8 @@ R$
 </form>
 
 <?php endif; ?>
+
+ </div>
 
 </body>
 </html>
