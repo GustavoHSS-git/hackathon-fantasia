@@ -55,7 +55,7 @@ if (isset($_POST['calcular'])) {
     if ($dias == 0) {
         $dias = 1;
     }
-    $valorTotal = $dias * $valorDiaria;
+    $valorTotal = $dias * $valorLocacao;
     $calculoRealizado = true;
 }
 

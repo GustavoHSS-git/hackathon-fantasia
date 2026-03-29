@@ -59,7 +59,7 @@
                             <label for="remember">Lembrar-me</label>
                         </div>
                         <!-- Link para recuperação de senha -->
-                        <a href="#" class="forgot-password">Esqueci a senha</a>
+                        <a href="redefinir.php" class="forgot-password">Esqueci a senha</a>
                     </div>
 
                     <!-- Botão de Entrar (Submit) -->

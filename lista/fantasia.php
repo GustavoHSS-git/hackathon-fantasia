@@ -23,11 +23,14 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     echo "<div class='grid-fantasias'>";
+    $id_novo = $_GET['id_novo'] ?? 0;
 
     while($row = $result->fetch_assoc()) {
+        $extra_class = ($row['idFantasia'] == $id_novo) ? 'highlight' : '';
+        $extra_id = ($row['idFantasia'] == $id_novo) ? 'id="novo-item"' : '';
 
         echo "
-        <div class='card-fantasia'>
+        <div class='card-fantasia $extra_class' $extra_id>
             <div class='foto-fantasia'>
                 <img src='../img/" . $row["imagem"] . "' alt='" . $row["nomeFantasia"] . "'>
             </div>
@@ -66,6 +69,9 @@ if ($result->num_rows > 0) {
         </div>";
     }
     echo "</div>";
+    if ($id_novo > 0) {
+        echo "<script>document.getElementById('novo-item').scrollIntoView({behavior: 'smooth'});</script>";
+    }
 } else {
     echo "Nenhuma fantasia cadastrada.";
 }

@@ -85,9 +85,11 @@ CREATE TABLE `funcionario` (
   `idFuncionario` int NOT NULL AUTO_INCREMENT,
   `nomeFuncionario` varchar(100) NOT NULL,
   `cpf` varchar(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `senha` varchar(45) NOT NULL,
   PRIMARY KEY (`idFuncionario`),
-  UNIQUE KEY `cpf_UNIQUE` (`cpf`)
+  UNIQUE KEY `cpf_UNIQUE` (`cpf`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -141,10 +143,13 @@ DROP TABLE IF EXISTS `locacao`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `locacao` (
   `idLocacao` int NOT NULL AUTO_INCREMENT,
+  `cpfCliente` varchar(14) NOT NULL,
+  `idFantasia` int NOT NULL,
   `dataLocacao` date NOT NULL,
-  `dataPrevista` date NOT NULL,
   `dataDevolucao` date NOT NULL,
-  `status` tinyint NOT NULL,
+  `dias` int NOT NULL,
+  `formaPagamento` varchar(45) NOT NULL,
+  `valorTotal` decimal(10,2) NOT NULL,
   PRIMARY KEY (`idLocacao`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;

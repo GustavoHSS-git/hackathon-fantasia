@@ -8,44 +8,56 @@
     <link rel="stylesheet" href="navbar.css">
 </head>
 <body>
-    
-    <h1>Menu Principal - Sistema de Locação de Fantasias</h1>
+    <header class="page-top">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-left">
+                    <img src="../logo/logo.png" alt="Logo" class="brand-img" onclick="window.location.href='menu.php'">
+                    <ul class="nav-links">
+                        <li><a href="menu.php" class="active">Home</a></li>
+                        <li><a href="../lista/cliente.php">Clientes</a></li>
+                        <li><a href="../lista/fantasia.php">Fantasias</a></li>
+                        <li><a href="../locar/locacao.php">Locação</a></li>
+                    </ul>
+                </div>
+                <div class="nav-right">
+                    <button class="logout-btn" onclick="window.location.href='../teladelogin/login.php'">
+                        <span>Sair</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-<div class="container">
+    <div class="main-content" style="margin-top: 100px; padding: 20px;">
+        <h1 style="text-align: center; color: var(--primary-color); margin-bottom: 40px;">Sistema de Locação de Fantasias</h1>
 
-    <div class="menu-container">
-        
-        <div class="section">
-            <h2>Cadastros</h2>
-            <ul>
-                <li><a href="../cadastros/cadCliente.php">Cadastrar Cliente</a></li>
-                <li><a href="../cadastros/cadFantasia.php">Cadastrar Fantasia</a></li>
-                <li><a href="../cadastros/cadFuncionario.php">Cadastrar Funcionário</a></li>
-            </ul>
-        </div>
+        <div class="menu-container">
+            <div class="section">
+                <h2>Cadastros</h2>
+                <ul>
+                    <li><a href="../cadastros/cadCliente.php">Cadastrar Cliente</a></li>
+                    <li><a href="../cadastros/cadFantasia.php">Cadastrar Fantasia</a></li>
+                    <li><a href="../cadastros/cadFuncionario.php">Cadastrar Funcionário</a></li>
+                </ul>
+            </div>
 
-        <div class="section">
-            <h2>Listas</h2>
-            <ul>
-                <li><a href="../lista/cliente.php">Listar Clientes</a></li>
-                <li><a href="../lista/fantasia.php">Listar Fantasias</a></li>
-            </ul>
-        </div>
+            <div class="section">
+                <h2>Listas</h2>
+                <ul>
+                    <li><a href="../lista/cliente.php">Listar Clientes</a></li>
+                    <li><a href="../lista/fantasia.php">Listar Fantasias</a></li>
+                    <li><a href="../lista/historico_cliente.php">Histórico de Locações</a></li>
+                </ul>
+            </div>
 
-        <div class="section">
-            <h2>Locação</h2>
-            <ul>
-                <li><a href="../locar/locacao.php">Realizar Locação</a></li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>Outros</h2>
-            <ul>
-                <li><a href="../teladelogin/login.php">Sair</a></li>
-            </ul>
-        </div>
-    </div> 
-</div>
+            <div class="section">
+                <h2>Locação</h2>
+                <ul>
+                    <li><a href="../locar/locacao.php">Realizar Locação</a></li>
+                </ul>
+            </div>
+        </div> 
+    </div>
 </body>
 </html>

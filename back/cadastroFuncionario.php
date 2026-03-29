@@ -13,24 +13,25 @@
 include("../conex.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nome = TRIM ($_POST['nomeFuncionario'] ?? '');
-    $senhaFuncionario = TRIM ($_POST['senha'] ?? '');
-    $cpfFuncionario = TRIM ($_POST['cpf'] ?? '');
+    $nome = trim($_POST['nomeFuncionario'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $senhaFuncionario = trim($_POST['senha'] ?? '');
+    $cpfFuncionario = trim($_POST['cpf'] ?? '');
 
 
-if($nome && $senhaFuncionario && $cpfFuncionario) {
-    $sql = "INSERT INTO funcionario (nomeFuncionario, senha, cpf) VALUES (?, ?, ?)";
+if($nome && $email && $senhaFuncionario && $cpfFuncionario) {
+    $sql = "INSERT INTO funcionario (nomeFuncionario, email, senha, cpf) VALUES (?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param('sss', $nome, $senhaFuncionario, $cpfFuncionario);
+    $stmt->bind_param('ssss', $nome, $email, $senhaFuncionario, $cpfFuncionario);
 
     // Executar a query e verificar se ocorreu erro
     if ($stmt->execute()) {
-        echo "<p class='sucesso'>Novo Usuário cadastrado com sucesso!</p>";
+        echo "<script>alert('Funcionário cadastrado com sucesso!'); window.location.href='../telainicial/menu.php';</script>";
     } else {
-        echo "<p class='erro'>Erro ao cadastrar o Usuário</p>";
+        echo "<p class='erro'>Erro ao cadastrar o Funcionário: " . $stmt->error . "</p>";
     }
     } else {
-        echo"Preecha os campos obrigátorios";
+        echo "Preencha todos os campos obrigatórios!";
     }
 }
 ?>

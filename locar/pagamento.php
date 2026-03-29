@@ -115,9 +115,10 @@ if (isset($_POST['confirmarPagamento'])) {
 
     <br><br>
 
-    <a href="loginCliente.php">Nova locação</a>
-
 <?php endif; ?>
+
+    <a class="nva"href="loginCliente.php">Nova locação</a>
+    </div>
 
 </body>
 </html>

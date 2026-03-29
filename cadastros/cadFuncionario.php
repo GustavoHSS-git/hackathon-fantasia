@@ -16,13 +16,17 @@
             <label for="nome" id="Nome">Nome: </label><br>
             <input type="text" name="nomeFuncionario" required><br>
 
+            <label for="email">E-mail: </label><br>
+            <input type="email" name="email" required><br>
+
             <label for="senha">Senha: </label><br>
             <input type="password" name="senha" required><br>
             
             <label for="cpf">CPF: </label><br>
-            <input type="cpf" name="cpf" required><br>
+            <input type="text" name="cpf" required><br>
 
             <input type="submit" value="Cadastrar" class="botaoCadastro"><br>
+            <a href="../telainicial/menu.php" class="botaoVoltar" style="display: block; text-align: center; margin-top: 10px; text-decoration: none; color: #666;">Voltar</a><br>
         </form>
     </div>
 </body>

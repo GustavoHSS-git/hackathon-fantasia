@@ -188,3 +188,16 @@ h3 {
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
+.nva{
+    color: var(--accent); 
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    align-items: center;
+    
+
+
+
+}
