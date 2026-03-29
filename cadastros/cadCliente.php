@@ -54,5 +54,6 @@
             <a href="../telainicial/menu.php" class="botaoVoltar" style="display: block; text-align: center; margin-top: 10px; text-decoration: none; color: #666;">Voltar</a><br>
         </form>
     </div>
+    <script src="validacao.js" defer></script>
 </body>
 </html>

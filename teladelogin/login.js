@@ -19,8 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Validação visual de CPF (ao sair do campo)
     if (cpfInput) {
         cpfInput.addEventListener('blur', () => {
-            if (cpfInput.value.trim() === '') {
-                cpfError.textContent = 'Por favor, insira o CPF';
+            const cleanCPF = cpfInput.value.replace(/\D/g, '');
+            if (cleanCPF.length !== 11) {
+                cpfError.textContent = 'O CPF deve ter 11 dígitos';
                 cpfError.style.display = 'block';
                 cpfInput.style.borderColor = '#ff6b6b';
             } else {
@@ -46,18 +47,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Validação final no envio do formulário
     if (loginForm) {
-        loginForm.addEventListener('submit'), (e) => {
-            const cpf = cpfInput.value.trim();
+        loginForm.addEventListener('submit', (e) => {
+            const cleanCPF = cpfInput.value.replace(/\D/g, '');
             const password = passwordInput.value;
 
-            // No seu login.js, esta parte valida o envio:
-            if (cpf === '' || password.length < 3) { 
-            e.preventDefault(); // Se cair aqui, o formulário não é enviado ao PHP
-            showNotification('Preencha os campos corretamente!', 'error');
-                }
+            if (cleanCPF.length !== 11 || password.length < 6) { 
+                e.preventDefault(); 
+                showNotification('Preencha os campos corretamente! CPF deve ter 11 dígitos e senha no mínimo 6.', 'error');
             }
-        }
         });
+    }
+});
 
 // Função para exibir notificações visuais
 function showNotification(message, type = 'info') {
