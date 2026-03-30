@@ -7,16 +7,15 @@
     <link rel="stylesheet" href="cadastro.css">
     <link rel="stylesheet" href="../telainicial/navbar.css">
 </head>
-<body>
-    <header class="page-top">
+<body style="padding-top: 80px;">
+     <header class="page-top">
         <nav class="navbar">
             <div class="container">
                 <div class="nav-left">
-                    <img src="../logo/logo.png" alt="Logo" class="brand-img" onclick="window.location.href='../telainicial/menu.php'">
                     <ul class="nav-links">
-                        <li><a href="../telainicial/menu.php">Home</a></li>
-                        <li><a href="cadCliente.php" class="active">Clientes</a></li>
-                        <li><a href="cadFantasia.php">Fantasias</a></li>
+                        <li><a href="../telainicial/menu.php" class="active">Home</a></li>
+                        <li><a href="../lista/cliente.php">Clientes</a></li>
+                        <li><a href="../lista/fantasia.php">Fantasias</a></li>
                         <li><a href="../locar/locacao.php">Locação</a></li>
                     </ul>
                 </div>

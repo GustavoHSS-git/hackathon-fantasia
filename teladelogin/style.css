@@ -295,6 +295,7 @@ body {
     gap: 10px;
     margin-top: 10px;
     box-shadow: 0 8px 26px rgba(13,110,253,0.12);
+    align-items: center;
 }
 
 .btn-login:hover { box-shadow: 0 12px 36px rgba(13,110,253,0.14); transform: translateY(-2px); }

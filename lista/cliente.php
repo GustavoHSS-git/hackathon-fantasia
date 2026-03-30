@@ -5,14 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Clientes</title>
     <link rel="stylesheet" href="../cadastros/listacliente.css">
+    <link rel="stylesheet" href="../telainicial/navbar.css">
 </head>
-<body>
-    <nav>
-        <a href="../telainicial/menu.php">Menu Principal</a> | 
-        <a href="fantasia.php">Listar Fantasias</a>
-    </nav>
+<body style="padding-top: 80px;">
+     <header class="page-top">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-left">
+                    <ul class="nav-links">
+                        <li><a href="../telainicial/menu.php" class="active">Home</a></li>
+                        <li><a href="../lista/cliente.php">Clientes</a></li>
+                        <li><a href="../lista/fantasia.php">Fantasias</a></li>
+                        <li><a href="../locar/locacao.php">Locação</a></li>
+                    </ul>
+                </div>
+                <div class="nav-right">
+                    <button class="logout-btn" onclick="window.location.href='../teladelogin/login.php'">
+                        <span>Sair</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>   
     <div class="container">
-<h1>Lista de Clientes Cadastrados</h1>
+<h1 class="h1">Lista de Clientes Cadastrados</h1>
 <?php
 
 require('../conex.php');

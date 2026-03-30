@@ -12,7 +12,6 @@
         <nav class="navbar">
             <div class="container">
                 <div class="nav-left">
-                    <img src="../logo/logo.png" alt="Logo" class="brand-img" onclick="window.location.href='menu.php'">
                     <ul class="nav-links">
                         <li><a href="menu.php" class="active">Home</a></li>
                         <li><a href="../lista/cliente.php">Clientes</a></li>
@@ -30,7 +29,7 @@
     </header>
 
     <div class="main-content" style="margin-top: 100px; padding: 20px;">
-        <h1 style="text-align: center; color: var(--primary-color); margin-bottom: 40px;">Sistema de Locação de Fantasias</h1>
+        <h1 style="text-align: center; color: #ffffff; margin-bottom: 40px;">Sistema de Locação de Fantasias</h1>
 
         <div class="menu-container">
             <div class="section">

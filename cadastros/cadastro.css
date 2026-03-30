@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 :root {
-    --accent: #4e6b3a;      
+    --accent: #4e6b3a;
     --bg-card: #ffffff;
     --text-dark: #333;
-    --shadow: 0 15px 35px rgba(0,0,0,0.2);
+    --shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     --danger: #d9534f;
 }
 
@@ -16,7 +16,7 @@
 }
 
 body {
-    background: linear-gradient(180deg,#493d3f 0%, #463b3c 100%);
+    background: linear-gradient(180deg, #493d3f 0%, #463b3c 100%);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -25,38 +25,30 @@ body {
     padding: 20px;
 }
 
-/* Estilo da Navegação Superior */
-nav {
-    margin-bottom: 30px;
-    background: var(--accent);
-    padding: 10px 20px;
-    border-radius: 50px;
-    backdrop-filter: blur(5px);
-}
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-    font-family: 'Inter', sans-serif;
-}
 
-nav a:hover {
-    color: #fff;
-}
-
-/* Contentor do Formulário */
-.container {
+/* Container Principal / Formulário */
+.container:not(.navbar .container) {
     width: 100%;
     max-width: 500px;
-    background: var(--bg-card);
+    background: rgba(255, 255, 255, 0.95);
     padding: 40px;
     border-radius: 20px;
-    box-shadow: var(--shadow);
-    border-top: 8px solid var(--accent);
+    margin: 40px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .h1fantasia {
@@ -69,15 +61,21 @@ nav a:hover {
 
 /* Elementos do Formulário */
 form {
+    background-color: #ffffff;
     flex-direction: column;
-    gap: 1px;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 label {
     font-weight: 600;
-    color: #555;
-    font-size: 0.9rem;
-    margin-bottom: -10px; /* Aproxima o label do input */
+    color: #444;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-left: 2px;
 }
 
 input[type="text"],
@@ -103,7 +101,8 @@ input:focus {
 }
 
 /* Botão de Cadastro */
-.botaoCadastro, button[type="submit"] {
+.botaoCadastro,
+button[type="submit"] {
     width: 100%;
     background: var(--accent);
     color: white;
@@ -119,10 +118,11 @@ input:focus {
     letter-spacing: 1px;
 }
 
-.botaoCadastro:hover, button[type="submit"]:hover {
+.botaoCadastro:hover,
+button[type="submit"]:hover {
     background: #3d5529;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 input[type="file"] {
@@ -161,6 +161,7 @@ input[type="file"] {
     margin-bottom: 30px;
     font-weight: 700;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 
@@ -172,15 +173,7 @@ h2 {
     letter-spacing: 1px;
 }
 
-.container{
-    background: var(--bg-card);
-    width: 100%;
-    max-width: 500px;
-    padding: 40px;
-    border-radius: 20px;
-    border-top: 8px solid var(--accent);
-    box-shadow: var(--shadow);
-}
+
 
 /* Ajuste específico para os labels e inputs */
 label {
@@ -191,9 +184,9 @@ label {
     margin-top: 15px;
 }
 
-input[type="text"], 
-input[type="number"], 
-input[type="password"], 
+input[type="text"],
+input[type="number"],
+input[type="password"],
 input[type="file"],
 input[type="email"] {
     width: 100%;
@@ -212,7 +205,8 @@ input:focus {
     box-shadow: 0 0 0 4px rgba(78, 107, 58, 0.1);
 }
 
-button[type="submit"], .btn-confirmar {
+button[type="submit"],
+.btn-confirmar {
     width: 100%;
     background: var(--accent);
     color: white;
@@ -255,6 +249,7 @@ button[name="excluir"]:hover {
     color: #777;
     font-weight: 600;
 }
+
 /* {
 color: #221b1b;
     margin-bottom: 50px;

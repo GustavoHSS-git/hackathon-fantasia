@@ -1,10 +1,4 @@
-/**
- * Sistema de validação "Anti-Usuário Burro"
- * Verifica CPF, E-mail e Senha antes de enviar o formulário
- */
-
 function validarCPF(cpf) {
-    // Remove tudo que não for número
     const limpo = cpf.replace(/\D/g, '');
     return limpo.length === 11;
 }

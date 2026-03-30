@@ -4,13 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="fantasia.css">
+<link rel="stylesheet" href="../telainicial/navbar.css">
 </head>
-<body>
-    <nav>
-        <a href="../telainicial/menu.php">Menu Principal</a> | 
-        <a href="cliente.php">Listar Clientes</a>
-    </nav>
-<h2>Lista de Fantasias Cadastradas</h2>
+<body style="padding-top: 80px;">
+      <header class="page-top">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-left">
+                    <ul class="nav-links">
+                        <li><a href="../telainicial/menu.php" class="active">Home</a></li>
+                        <li><a href="../lista/cliente.php">Clientes</a></li>
+                        <li><a href="../lista/fantasia.php">Fantasias</a></li>
+                        <li><a href="../locar/locacao.php">Locação</a></li>
+                    </ul>
+                </div>
+                <div class="nav-right">
+                    <button class="logout-btn" onclick="window.location.href='../teladelogin/login.php'">
+                        <span>Sair</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <h2 class="h1fan">Lista de Fantasias Cadastradas</h2>
+    <div class="container">
 <?php
 
 require('../conex.php');

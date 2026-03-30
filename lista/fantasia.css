@@ -26,29 +26,7 @@ body {
     padding: 20px;
 }
 
-/* Navegação */
-nav {
-    max-width: 350px;
-    margin: 0 auto 30px;
-    background: var(--primary);
-    padding: 15px 30px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: opacity 0.3s;
-}
-
-nav a:hover {
-    opacity: 0.8;
-}
 
 h2 {
     text-align: center;
@@ -210,4 +188,16 @@ h2 {
 @keyframes flash {
     from { box-shadow: 0 0 5px var(--accent); }
     to { box-shadow: 0 0 20px var(--accent); }
+}
+
+.h1fan{
+    color: #000000;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    margin-top: 20px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+   
 }

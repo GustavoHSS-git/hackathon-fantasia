@@ -31,5 +31,4 @@ if ($stmt->execute()) {
     } else { 
     echo("Modelo não cadastrado");
     }
-}
 ?>
