@@ -16,7 +16,7 @@
                         <li><a href="menu.php" class="active">Home</a></li>
                         <li><a href="../lista/cliente.php">Clientes</a></li>
                         <li><a href="../lista/fantasia.php">Fantasias</a></li>
-                        <li><a href="../locar/locacao.php">Locação</a></li>
+                        <li><a href="../locar/loginCliente.php">Locação</a></li>
                     </ul>
                 </div>
                 <div class="nav-right">
@@ -53,7 +53,7 @@
             <div class="section">
                 <h2>Locação</h2>
                 <ul>
-                    <li><a href="../locar/locacao.php">Realizar Locação</a></li>
+                    <li><a href="../locar/loginCliente.php">Realizar Locação</a></li>
                 </ul>
             </div>
         </div> 
