@@ -29,50 +29,53 @@
      <h1 class="h1loc">Locação de Fantasia</h1>
     <div class="container">
 
+    <?php
+    require_once("../conex.php");
+    $fantasiaEncontrada = false;
+    $calculoRealizado = false;
+    $cpfCliente = "";
 
-<?php
-require_once("../conex.php");
-$fantasiaEncontrada = false;
-$calculoRealizado = false;
-$cpfCliente = "";
+    if (isset($_POST['cpfCliente'])) {
+        $cpfCliente = $_POST['cpfCliente'];
+    }
+    if (isset($_POST['buscar'])) {
+        $id = $_POST['idFantasia'];
+        $sql = "SELECT idFantasia, nomeFantasia, valorLocacao
+                FROM fantasia
+                WHERE idFantasia = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-if (isset($_POST['cpfCliente'])) {
-    $cpfCliente = $_POST['cpfCliente'];
-}
-if (isset($_POST['buscar'])) {
-    $id = $_POST['idFantasia'];
-    $sql = "SELECT idFantasia, nomeFantasia, valorLocacao
-            FROM fantasia
-            WHERE idFantasia = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            $fantasia = $result->fetch_assoc();
+            $fantasiaEncontrada = true;
+        } else {
+            echo "<h3>Fantasia não encontrada.</h3>";
+        }
 
-    if ($result->num_rows > 0) {
-        $fantasia = $result->fetch_assoc();
-        $fantasiaEncontrada = true;
-    } else {
-        echo "<h3>Fantasia não encontrada.</h3>";
+    }
+    if (isset($_POST['calcular'])) {
+        $idFantasia = $_POST['idFantasia'];
+        $nomeFantasia = $_POST['nomeFantasia'];
+        $valorLocacao = $_POST['valorLocacao'];
+        $dataLocacao = new DateTime($_POST['dataLocacao']);
+        $dataDevolucao = new DateTime($_POST['dataDevolucao']);
+        $diferenca = $dataLocacao->diff($dataDevolucao);
+        $dias = $diferenca->days;
+        if ($dataDevolucao < $dataLocacao) {
+            echo "<h3>Data de devolução não pode ser menor que a data de locação.</h3>";
+            exit;
+        }
+        if ($dias == 0) {
+            $dias = 1;
+        }
+        $valorTotal = $dias * $valorLocacao;
+        $calculoRealizado = true;
     }
 
-}
-if (isset($_POST['calcular'])) {
-    $idFantasia = $_POST['idFantasia'];
-    $nomeFantasia = $_POST['nomeFantasia'];
-    $valorLocacao = $_POST['valorLocacao'];
-    $dataLocacao = new DateTime($_POST['dataLocacao']);
-    $dataDevolucao = new DateTime($_POST['dataDevolucao']);
-    $diferenca = $dataLocacao->diff($dataDevolucao);
-    $dias = $diferenca->days;
-    if ($dias == 0) {
-        $dias = 1;
-    }
-    $valorTotal = $dias * $valorLocacao;
-    $calculoRealizado = true;
-}
-
-?>
+    ?>
 
 <?php if (!$fantasiaEncontrada && !$calculoRealizado): ?>
 
@@ -107,7 +110,7 @@ R$
     <input type="hidden" name="cpfCliente" value="<?php echo $cpfCliente; ?>">
     <input type="hidden" name="idFantasia" value="<?php echo $fantasia['idFantasia']; ?>">
     <input type="hidden" name="nomeFantasia" value="<?php echo $fantasia['nomeFantasia']; ?>">
-    <input type="hidden" name="valorTotal" value="<?php echo $fantasia['valorTotal']; ?>">
+    <input type="hidden" name="valorLocacao" value="<?php echo $fantasia['valorLocacao']; ?>">
 
     Data de locação:<br>
 
@@ -133,7 +136,7 @@ R$
 
     R$
 
-    <?php echo $fantasia['valorLocacao']; ?><br><br>
+    <?php echo $valorLocacao; ?><br><br>
 
     Valor total:
 

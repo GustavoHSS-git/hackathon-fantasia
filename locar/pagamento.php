@@ -70,26 +70,19 @@ if (isset($_POST['confirmarPagamento'])) {
         <!-- Enviando os dados escondidos para o PHP -->
 
         <input type="hidden" name="dataLocacao" value="<?php echo $_POST['dataLocacao']; ?>">
-
         <input type="hidden" name="dataDevolucao" value="<?php echo $_POST['dataDevolucao']; ?>">
-
         <input type="hidden" name="dias" value="<?php echo $_POST['dias']; ?>">
-
         <input type="hidden" name="valorTotal" value="<?php echo $_POST['valorTotal']; ?>">
-
         <input type="hidden" name="idFantasia" value="<?php echo $_POST['idFantasia']; ?>">
-
         <input type="hidden" name="cpfCliente" value="<?php echo $_POST['cpfCliente']; ?>">
-
-
-       
-        <br>
-        <div = class="form-group">
+        <input type="hidden" name="cpfCliente" value="<?php echo $_POST['quantidadeDisponivel']; ?>">
+    <br>
+        <div class="form-group">
             <h3>Pix <input type="radio" name="formaPagamento" value="Pix" required></h3>
         </div>
 
         
-        <div = class="form-group">
+        <div class="form-group">
             <h3>Dinheiro <input type="radio" name="formaPagamento" value="Dinheiro" required></h3>
         </div>
 
@@ -132,6 +125,12 @@ if (isset($_POST['confirmarPagamento'])) {
     R$
 
     <?php echo $valorTotal; ?>
+
+    <br><br>
+
+    Estoque:
+
+    <?php echo $quantidadeDisponivel; ?>
 
     <br><br>
 

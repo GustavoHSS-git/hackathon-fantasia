@@ -1,21 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../cadastros/cadastro.css">
-</head>
-<body>
-    
-
 <?php
 include("../conex.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = trim($_POST['nomeFuncionario'] ?? '');
-    $email = trim($_POST['email'] ?? '');
     $senha = trim($_POST['senha'] ?? '');
+    $email = trim($_POST['email'] ?? '');
     $cpf = preg_replace('/\D/', '', $_POST['cpf'] ?? '');
 
     $errors = [];
