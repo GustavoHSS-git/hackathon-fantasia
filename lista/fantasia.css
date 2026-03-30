@@ -20,35 +20,13 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-body);
+    background-color: #ecf3ff;
     color: var(--text-dark);
     line-height: 1.6;
     padding: 20px;
 }
 
-/* Navegação */
-nav {
-    max-width: 350px;
-    margin: 0 auto 30px;
-    background: var(--primary);
-    padding: 15px 30px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: opacity 0.3s;
-}
-
-nav a:hover {
-    opacity: 0.8;
-}
 
 h2 {
     text-align: center;
@@ -66,7 +44,7 @@ h2 {
     margin: 0 auto;
 }
 
-/* Card Individual */
+
 .card-fantasia {
     background: var(--white);
     border-radius: 15px;
@@ -85,9 +63,11 @@ h2 {
 /* Imagem */
 .foto-fantasia img {
     width: 100%;
-    height: 220px;
-    object-fit: cover;
+    height: 350px; 
+    object-fit: contain; 
+    background-color: #ffffff; 
     border-bottom: 3px solid var(--primary);
+    display: block; 
 }
 
 /* Informações */
@@ -122,6 +102,7 @@ h2 {
     margin-bottom: 20px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -197,3 +178,26 @@ h2 {
 
 .botoes a:first-child button:hover { background: var(--primary-dark); }
 .botoes a:last-child button:hover { background: var(--danger); color: white; }
+
+/* Destaque para novo cadastro */
+.card-fantasia.highlight {
+    border: 3px solid var(--accent);
+    animation: flash 1s infinite alternate;
+}
+
+@keyframes flash {
+    from { box-shadow: 0 0 5px var(--accent); }
+    to { box-shadow: 0 0 20px var(--accent); }
+}
+
+.h1fan{
+    color: #000000;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    margin-top: 20px;
+    padding: 15px 30px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+   
+}

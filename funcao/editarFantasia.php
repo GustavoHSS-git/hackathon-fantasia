@@ -25,6 +25,7 @@ if (!$fantasia) {
 <head>
 <meta charset="UTF-8">
 <title>Editar Fantasia</title>
+<link rel="stylesheet" href="../cadastros/cadastro.css">
 </head>
 <body>
 <h2>Editar Fantasia</h2>

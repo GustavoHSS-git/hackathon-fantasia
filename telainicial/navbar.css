@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
 
 :root {
-    --primary-color: #4e6b3a;      /* Cor azul principal */
-    --secondary-color: #F0EA3E;    /* Cor secundária (hover botão) */
-    --bg-light: #f8f9fa;           /* Background claro */
-    --text-dark: #333333;          /* Cor do texto */
-    --border-color: #e0e0e0;       /* Cor das bordas */
+    --primary-color: #2c3e50;      /* Cor escura e elegante para destaques */
+    --secondary-color: #e74c3c;    /* Cor de destaque moderno (vermelho suave) */
+    --bg-light: #f8f9fa;
+    --text-dark: #2c3e50;
+    --text-muted: #7f8c8d;         /* Texto secundário/inativo */
+    --border-color: rgba(0, 0, 0, 0.08); /* Borda quase transparente */
 }
 
 * {
@@ -20,14 +21,11 @@
 .container {
     max-width: 1220px;
     margin: 0 auto;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 0 20px;
 }
 
 /* ============================================
-   HEADER / NAVBAR
+   HEADER / NAVBAR (Clean & Glassmorphism)
    ============================================ */
 
 /* Estrutura Fixa no Topo */
@@ -39,12 +37,17 @@
     z-index: 1000;
 }
 
-/* Estilização da Barra */
+/* Estilização da Barra: Efeito Blur translúcido */
 .navbar {
-    background: white;
+    background: rgb(255, 255, 255); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12    px);
     border-bottom: 1px solid var(--border-color);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    height: 65px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03); 
+    height: 75px;
+    transition: all 0.3s ease;
+    border-top : 8px solid #4e6b3a;
+
 }
 
 .navbar .container {
@@ -54,109 +57,106 @@
     justify-content: space-between;
 }
 
-/* Lado Esquerdo (Logo + Links) */
 .nav-left { 
     display: flex; 
     align-items: center; 
-    gap: 40px; 
+    gap: 45px; 
 } 
 
+/* Otimização da Imagem da Logo para o design simples */
 .brand-img {
-    width: 100px;
-    height: 100px;
+    height: 45px; /* Tamanho delicado */
+    width: auto;
     object-fit: contain;
     display: block;
     cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 4px; /* Suaviza as pontas se houver fundo */
+}
+
+.brand-img:hover {
+    transform: scale(1.05); /* Efeito suave no hover */
 }
 
 /* Links de Navegação */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 30px;
+    gap: 25px;
     align-items: center;
     height: 100%;
 }
 
 .nav-links a {
-    color: var(--text-dark);
+    color: var(--text-muted);
     text-decoration: none;
-    font-weight: 500;
-    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 14.5px;
+    letter-spacing: 0.3px;
+    padding: 8px 4px; /* Removendo o background das laterais e priorizando sublinhado */
     border-radius: 4px;
     transition: all 0.3s ease;
-    height: 100%;
     display: flex;
     align-items: center;
+    position: relative; /* Necessário para a linha inferior animada */
+}
+
+/* Micro-animação inteligente e elegante nos links */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; /* Começa invisível */
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+    border-radius: 2px;
 }
 
 /* Efeitos de Hover nos Links */
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--primary-color);
-    background: rgba(0, 115, 133, 0.1);
+    color: var(--text-dark);
 }
 
-/* Botão de Gatilho (Ex: Botão de Abrir Carrinho) */
-.cart-btn {
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    height: 45px;
-    display: flex;
-    align-items: center;
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%; /* Expande a linha inferior elegantemente */
 }
 
-/* Efeitos no Botão */
-.cart-btn:hover {
-    background: var(--secondary-color);
-    transform: scale(1.05);
-}
-
-/* Botões de Admin e Logout */
+/* Botões da Direita */
 .nav-right {
     display: flex;
-    gap: 10px;
+    gap: 15px;
     align-items: center;
 }
 
-.admin-btn,
+/* Design minimalista do Botão de Logout (Pill Shape) */
 .logout-btn {
-    background: linear-gradient(135deg, #8B5CF6, #7C3AED);
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 8px;
+    background: transparent;
+    color: var(--secondary-color);
+    border: 1.5px solid var(--secondary-color);
+    padding: 8px 24px;
+    border-radius: 30px; /* Formato de pílula elegante arredondado */
     cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    height: 45px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 13.5px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Curva suave de animação */
     display: flex;
     align-items: center;
     gap: 6px;
+    height: 40px;
 }
 
-.admin-btn:hover {
-    background: linear-gradient(135deg, #a78bfa, #9D4EDD);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
-}
-
-.logout-btn {
-    background: linear-gradient(135deg, #EF4444, #DC2626);
-}
-
+/* Efeitos premium do Botão */
 .logout-btn:hover {
-    background: linear-gradient(135deg, #F87171, #EF5350);
+    background: var(--secondary-color);
+    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); /* Brilho vermelho suave sob o botão */
 }
 
 /* ============================================

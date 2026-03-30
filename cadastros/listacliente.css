@@ -24,43 +24,28 @@ body {
     padding: 20px;
 }
 
-/* Estilo da Navegação Superior */
-nav {
-    margin-bottom: 30px;
-    background: var(--accent);
-    padding: 10px 20px;
-    border-radius: 50px;
-    backdrop-filter: blur(5px);
+
+
+/* Contentor do Formulário / Lista */
+.container:not(.navbar .container) {
+    width: 100%;
+    max-width: 1100px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 16px;
+    margin: 40px auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    animation: fadeIn 0.4s ease-out;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: 500;
-    font-size: 0.9rem;
-    transition: color 0.3s;
-    font-family: 'Inter', sans-serif;
-}
-
-nav a:hover {
-    color: #fff;
-}
-
-/* Contentor do Formulário */
-.container {
-    width: 1200px;
-    max-width: 1200px;
-    background: var(--bg-card);
-    padding: 90px;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    border-top: 8px solid var(--accent);
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 h1 {
     text-align: center;
-    color: var(--text-dark);
+    color: #333;
     font-size: 1.8rem;
     margin-bottom: 30px;
     font-weight: 700;
@@ -70,14 +55,15 @@ h1 {
 form {
     display: flex;
     flex-direction: column;
-    gap: 6  px;
+    gap: 15px;
 }
 
 label {
     font-weight: 600;
-    color: #555;
-    font-size: 0.9rem;
-    margin-bottom: -10px; /* Aproxima o label do input */
+    color: #444;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    padding-left: 2px;
 }
 
 input[type="text"],

@@ -4,9 +4,29 @@
     <meta charset="UTF-8">
     <title>Pagamento</title>
     <link rel="stylesheet" href="locacao.css">
+    <link rel="stylesheet" href="../telainicial/navbar.css">
 </head>
-<body>
-    <h1>Pagamento</h1>
+<body style="padding-top: 80px;">
+     <header class="page-top">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-left">
+                    <ul class="nav-links">
+                        <li><a href="../telainicial/menu.php" class="active">Home</a></li>
+                        <li><a href="../lista/cliente.php">Clientes</a></li>
+                        <li><a href="../lista/fantasia.php">Fantasias</a></li>
+                        <li><a href="../locar/locacao.php">Locação</a></li>
+                    </ul>
+                </div>
+                <div class="nav-right">
+                    <button class="logout-btn" onclick="window.location.href='../teladelogin/login.php'">
+                        <span>Sair</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <h1 class="h1pag">Pagamento</h1>
 
     <div class="container">
 <?php
@@ -115,9 +135,10 @@ if (isset($_POST['confirmarPagamento'])) {
 
     <br><br>
 
-    <a href="loginCliente.php">Nova locação</a>
-
 <?php endif; ?>
+
+    <a class="nva"href="loginCliente.php">Nova locação</a>
+    </div>
 
 </body>
 </html>
