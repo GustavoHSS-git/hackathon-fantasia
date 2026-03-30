@@ -120,7 +120,7 @@ R$
 
     R$
 
-    <?php echo $valorLocacao; ?><br><br>
+    <?php echo $fantasia['valorLocacao']; ?><br><br>
 
     Valor total:
 
