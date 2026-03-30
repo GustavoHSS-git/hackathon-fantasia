@@ -75,7 +75,6 @@ if (isset($_POST['confirmarPagamento'])) {
         <input type="hidden" name="valorTotal" value="<?php echo $_POST['valorTotal']; ?>">
         <input type="hidden" name="idFantasia" value="<?php echo $_POST['idFantasia']; ?>">
         <input type="hidden" name="cpfCliente" value="<?php echo $_POST['cpfCliente']; ?>">
-        <input type="hidden" name="cpfCliente" value="<?php echo $_POST['quantidadeDisponivel']; ?>">
     <br>
         <div class="form-group">
             <h3>Pix <input type="radio" name="formaPagamento" value="Pix" required></h3>
@@ -125,12 +124,6 @@ if (isset($_POST['confirmarPagamento'])) {
     R$
 
     <?php echo $valorTotal; ?>
-
-    <br><br>
-
-    Estoque:
-
-    <?php echo $quantidadeDisponivel; ?>
 
     <br><br>
 
