@@ -28,7 +28,7 @@ body {
 
 
 /* Container Principal / Formulário */
-.container:not(.navbar .container) {
+.cotainer:not(.navbar .container) {
     width: 100%;
     max-width: 500px;
     background: rgba(255, 255, 255, 0.95);
@@ -61,12 +61,14 @@ body {
 
 /* Elementos do Formulário */
 form {
-    background-color: #ffffff;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    margin: 40px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.4s ease-out;
 }
 
 label {

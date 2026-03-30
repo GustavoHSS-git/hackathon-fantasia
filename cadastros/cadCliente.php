@@ -28,14 +28,14 @@
         </nav>
     </header>
     <div class="titulo">
-
-    
+        
     <div class="container">
-        <h1 class="titulo">Cadastro de Clientes</h1>
         <div class="titulo">
         </div>
 
         <form action="../back/cadastroCliente.php" method="post">
+
+                <h1 class="titulo">Cadastro de Clientes</h1>
             
             <label for="nomeCliente" id="Nome">Nome do Cliente: </label><br>
             <input type="text" name="nomeCliente" required><br>
