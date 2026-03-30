@@ -127,6 +127,12 @@ if (isset($_POST['confirmarPagamento'])) {
 
     <br><br>
 
+    Estoque:
+
+    <?php echo $quantidadeDisponivel; ?>
+
+    <br><br>
+
 <?php endif; ?>
 
     <a class="nva"href="loginCliente.php">Nova locação</a>

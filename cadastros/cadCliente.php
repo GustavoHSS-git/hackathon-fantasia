@@ -16,7 +16,7 @@
                         <li><a href="../telainicial/menu.php" class="active">Home</a></li>
                         <li><a href="../lista/cliente.php">Clientes</a></li>
                         <li><a href="../lista/fantasia.php">Fantasias</a></li>
-                        <li><a href="../locar/locacao.php">Locação</a></li>
+                        <li><a href="../locar/loginCliente.php">Locação</a></li>
                     </ul>
                 </div>
                 <div class="nav-right">
@@ -28,14 +28,14 @@
         </nav>
     </header>
     <div class="titulo">
-
-    
+        
     <div class="container">
-        <h1 class="titulo">Cadastro de Clientes</h1>
         <div class="titulo">
         </div>
 
         <form action="../back/cadastroCliente.php" method="post">
+
+                <h1 class="titulo">Cadastro de Clientes</h1>
             
             <label for="nomeCliente" id="Nome">Nome do Cliente: </label><br>
             <input type="text" name="nomeCliente" required><br>

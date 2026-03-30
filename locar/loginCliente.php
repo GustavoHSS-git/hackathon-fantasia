@@ -15,7 +15,7 @@
                         <li><a href="../telainicial/menu.php" class="active">Home</a></li>
                         <li><a href="../lista/cliente.php">Clientes</a></li>
                         <li><a href="../lista/fantasia.php">Fantasias</a></li>
-                        <li><a href="../locar/locacao.php">Locação</a></li>
+                        <li><a href="../locar/loginCliente.php">Locação</a></li>
                     </ul>
                 </div>
                 <div class="nav-right">
@@ -26,6 +26,7 @@
             </div>
         </nav>
     </header>
+    <div class="container">
     <h1>Buscar Cliente</h1>
 
 <?php
@@ -91,5 +92,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <button type="submit">Ir para a escolha de fantasia</button>
 </form>
 <?php endif; ?>
+    </div>
 </body>
 </html>

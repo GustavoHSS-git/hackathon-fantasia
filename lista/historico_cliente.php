@@ -39,7 +39,7 @@
                         <li><a href="../telainicial/menu.php" class="active">Home</a></li>
                         <li><a href="../lista/cliente.php">Clientes</a></li>
                         <li><a href="../lista/fantasia.php">Fantasias</a></li>
-                        <li><a href="../locar/locacao.php">Locação</a></li>
+                        <li><a href="../locar/loginCliente.php">Locação</a></li>
                     </ul>
                 </div>
                 <div class="nav-right">
@@ -101,7 +101,7 @@
         }
         ?>
         <br>
-        <a href="../telainicial/menu.php" style="text-decoration: none; color: var(--primary-color); font-weight: bold;">← Voltar ao Menu</a>
+        <a href="../telainicial/menu.php" style="text-decoration: none; color: #ffffff; font-weight: bold;">← Voltar ao Menu</a>
     </div>
 </body>
 </html>

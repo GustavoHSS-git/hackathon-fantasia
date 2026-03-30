@@ -28,7 +28,6 @@ body {
 
 /* Container Principal da Página */
 .container:not(.navbar .container) {
-    width: 100%;
     max-width: 650px;
     background: rgba(255, 255, 255, 0.95);
     padding: 40px 50px;
