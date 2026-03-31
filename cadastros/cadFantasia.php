@@ -30,9 +30,10 @@
 
     <div class="container">
 
-        <h1 class="h1fantasia">Cadastro de Fantasia</h1>
+       
     <form action="../back/cadastroFantasia.php" method="post">
         <div>
+             <h1 class="h1fantasia">Cadastro de Fantasia</h1>
             <label for="nome">Nome: </label>
             <input type="text" id="nomeFantasia" name="nomeFantasia" required><br>
 
@@ -42,7 +43,9 @@
             <label for="descricao">Descrição: </label>
             <input type="text" id="descricaoFantasia" name="descricaoFantasia" required><br>
 
-            <select for="categoria">Categoria:
+                <label for="categoria">Selecione a categoria: </label>
+            <select class="select" id="categoriaFantasia" name="categoriaFantasia" required>
+                <option value="" disabled selected>Categoria</option>
                 <option value="anime">Anime</option>
                 <option value="princesa">Princesa</option>
                 <option value="Heroí">Herói</option>
@@ -51,7 +54,7 @@
                 <option value="Desenho">Desenho</option> 
                 <option value="JOGO">jogo</option>
             </select>
-            <input type="text" id="categoriaFantasia" name="categoriaFantasia" required><br>
+            
 
             <label for="quantidade">Estoque</label>
             <input type="number" id="quantidadeDisponivel" name="quantidadeDisponivel" required><br>

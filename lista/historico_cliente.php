@@ -25,7 +25,7 @@
             border-bottom: 1px solid #eee;
         }
         th {
-            background-color: var(--primary-color);
+            background-color: #4CAF50;
             color: white;
         }
     </style>
@@ -57,7 +57,7 @@
         <form method="GET" style="margin-bottom: 30px;">
             <label>Buscar por CPF do Cliente:</label><br>
             <input type="text" name="cpf" placeholder="000.000.000-00" required value="<?php echo $_GET['cpf'] ?? ''; ?>" style="padding: 10px; width: 250px; border-radius: 5px; border: 1px solid #ccc;">
-            <button type="submit" style="padding: 10px 20px; background: var(--primary-color); color: white; border: none; border-radius: 5px; cursor: pointer;">Buscar</button>
+            <button type="submit" style="padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">Buscar</button>
         </form>
 
         <?php

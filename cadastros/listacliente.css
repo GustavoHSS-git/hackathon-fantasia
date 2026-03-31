@@ -28,8 +28,7 @@ body {
 
 /* Contentor do Formulário / Lista */
 .container:not(.navbar .container) {
-    width: 100%;
-    max-width: 1100px;
+  
     background: rgba(255, 255, 255, 0.95);
     padding: 40px;
     border-radius: 16px;
@@ -53,9 +52,7 @@ h1 {
 
 /* Elementos do Formulário */
 form {
-    display: flex;
     flex-direction: column;
-    gap: 15px;
 }
 
 label {

@@ -8,6 +8,8 @@
 </head>
 <body>
     <div class="container">
+
+    <div class="login-container">
         <div class="login-right">
             <div class="login-box">
                 <h2>Recuperar Senha</h2>
