@@ -127,10 +127,6 @@ if (isset($_POST['confirmarPagamento'])) {
 
     <br><br>
 
-    Estoque:
-
-    <?php echo $quantidadeDisponivel; ?>
-
     <br><br>
 
 <?php endif; ?>
