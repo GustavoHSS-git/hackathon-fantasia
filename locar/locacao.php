@@ -29,6 +29,7 @@
      <h1 class="h1loc">Locação de Fantasia</h1>
     <div class="container">
 
+
     <?php
     require_once("../conex.php");
     $fantasiaEncontrada = false;
@@ -86,7 +87,7 @@
     <input type="hidden" name="cpfCliente" value="<?php echo $cpfCliente; ?>">ID da Fantasia:<br>
     <input type="number" name="idFantasia" required><br><br>
     <button type="submit" name="buscar">Buscar Fantasia</button>
-
+            <button class="voltar"  href="#" onclick="history.back()">Voltar</button>
 </form>
 
 <?php endif; ?>
@@ -120,6 +121,7 @@ R$
 
     <input type="date" name="dataDevolucao" required><br><br>
     <button type="submit" name="calcular">Calcular valor</button>
+    <button class="voltar"  href="#" onclick="history.back()">Voltar</button>
 
 </form>
 
@@ -154,6 +156,8 @@ R$
     <input type="hidden" name="valorTotal" value="<?php echo $valorTotal; ?>">
 
     <button type="submit">Ir para pagamento</button>
+    <button class="voltar"  href="#" onclick="history.back()">Voltar</button>
+
 
 </form>
 

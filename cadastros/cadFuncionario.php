@@ -28,7 +28,7 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    
         <form action="../back/cadastroFuncionario.php" method="post">
         <div class="titulo">
             <h1 class="titulo">Cadastre-se</h1>

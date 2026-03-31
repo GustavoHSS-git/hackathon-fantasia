@@ -133,35 +133,30 @@
     align-items: center;
 }
 
-/* Design minimalista do Botão de Logout (Pill Shape) */
 .logout-btn {
     background: transparent;
     color: var(--secondary-color);
     border: 1.5px solid var(--secondary-color);
     padding: 8px 24px;
-    border-radius: 30px; /* Formato de pílula elegante arredondado */
+    border-radius: 30px; 
     cursor: pointer;
     font-weight: 700;
     letter-spacing: 0.5px;
-    font-size: 13.5px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* Curva suave de animação */
+    font-size: 13.5px;  
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
     display: flex;
     align-items: center;
     gap: 6px;
     height: 40px;
 }
 
-/* Efeitos premium do Botão */
+
 .logout-btn:hover {
     background: var(--secondary-color);
     color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); /* Brilho vermelho suave sob o botão */
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); 
 }
-
-/* ============================================
-   RESPONSIVIDADE DA NAVBAR
-   ============================================ */
 
 /* TABLET (768px até 1024px) */
 @media (max-width: 1024px) {
