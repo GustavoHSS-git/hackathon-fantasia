@@ -28,9 +28,9 @@ body {
 
 /* Container Principal da Página */
 .container:not(.navbar .container) {
-    max-width: 650px;
+    max-width: 950px;
     background: rgba(255, 255, 255, 0.95);
-    padding: 40px 50px;
+    padding: 80px 100px;
     border-radius: 16px;
     margin: 40px auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -116,13 +116,14 @@ button[type="submit"] {
     transition: all 0.3s;
     text-transform: uppercase;
     letter-spacing: 1px;
+    border-color: var(--accent);
 }
 
 .botaoCadastro:hover,
 button[type="submit"]:hover {
     background: #3d5529;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 input[type="date"] {
@@ -192,8 +193,46 @@ h3 {
     font-family: 'Inter', sans-serif;
     text-align: center;
     align-items: center;
+}
+.voltar {
+    width: 100%;
+    background: transparent;
+    color: #e74c3c;
+    padding: 14px;
+    border-color: #e74c3c;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
 
-
-
-
+.voltar:hover {
+    background: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); 
+}
+.btn-ver {
+    width: 100%;
+    background: var(--accent);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-color: var(--accent);
+}
+.btn-ver:hover {
+    background: #3d5529;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }

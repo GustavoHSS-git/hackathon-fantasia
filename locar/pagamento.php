@@ -29,6 +29,7 @@
     <h1 class="h1pag">Pagamento</h1>
 
     <div class="container">
+        
 <?php
 
 require_once("../conex.php");
@@ -88,6 +89,7 @@ if (isset($_POST['confirmarPagamento'])) {
         <br><br>
 
         <button type="submit" name="confirmarPagamento">Confirmar pagamento</button>
+        
 
     </form>
 
@@ -123,15 +125,22 @@ if (isset($_POST['confirmarPagamento'])) {
 
     R$
 
+    
+
     <?php echo $valorTotal; ?>
 
     <br><br>
 
     <br><br>
 
+    <button class=""onclick="window.location.href='../lista/fantasia.php'">Voltar para fantasias</button>    
+
+    
+
+
+
 <?php endif; ?>
 
-    <a class="nva"href="loginCliente.php">Nova locação</a>
     </div>
 
 </body>

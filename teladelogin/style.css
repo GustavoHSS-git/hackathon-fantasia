@@ -33,11 +33,7 @@ body {
     justify-content: center;
 }
 
-/* ============================================
-   CONTAINER PRINCIPAL DO LOGIN
-   ============================================ */
-/* Caixa branca com 480x640px, sombra, e animação de entrada (popIn).
-   Hover: levanta (translateY) e aumenta sombra. */
+
 .login-container {
     display: flex;
     width: 480px;
