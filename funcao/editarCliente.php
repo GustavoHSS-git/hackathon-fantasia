@@ -69,17 +69,6 @@ if (isset($_POST['salvar'])) {
     $cpfCliente = $_POST['cpfCliente'];
 
     $stmt = $conn->prepare("
-<<<<<<< HEAD
-    UPDATE cliente
-    SET nomeCliente = ?,
-    email = ?,
-    telefone = ?,
-    cpfCliente = ?
-    WHERE idCliente = ?
-    ");
-
-    $stmt->bind_param("ssiii", $nome, $email, $telefone, $cpfCliente, $idCliente);
-=======
         UPDATE cliente
         SET nomeCliente = ?,
             email = ?,
@@ -96,18 +85,12 @@ if (isset($_POST['salvar'])) {
         $cpfCliente,
         $id
     );
->>>>>>> d9f5731782eaf1916a1459cdd6517194a7f3675a
 
     $stmt->execute();
 
     echo "<script>
-<<<<<<< HEAD
-    alert('Cliente atualizado com sucesso!');
-    window.location.href = '../lista/cliente.php';
-=======
         alert('Cliente atualizado com sucesso!');
         window.location.href = '../lista/cliente.php';
->>>>>>> d9f5731782eaf1916a1459cdd6517194a7f3675a
     </script>";
 }
 ?>

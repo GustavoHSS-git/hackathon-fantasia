@@ -244,13 +244,24 @@ button[name="excluir"]:hover {
 }
 
 .btn-cancelar {
-    display: block;
-    text-align: center;
-    margin-top: 15px;
-    text-decoration: none;
-    color: #777;
-    font-weight: 600;
+    width: 100%;
+    background: transparent;
+    color: #e74c3c;
+    padding: 14px;
+    border-color: #e74c3c;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
 }
+.btn-cancelar:hover {
+    background: #c9302c;
+    color: white;
+}   
 
 /* {
 color: #221b1b;
@@ -286,7 +297,7 @@ color: #221b1b;
 
 .voltar:hover {
     background: var(--secondary-color);
-    color: #e74c3c;
+    color: #d9534f;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); 
 }
