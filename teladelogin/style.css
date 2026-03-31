@@ -96,7 +96,7 @@ body {
 .login-right {
     flex: 1;
     width: 100%;
-    padding: 100px 100px;
+    padding: 0px 80px;
     align-items: center;
     justify-content: center;
     background: white;
@@ -265,6 +265,7 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: all 0.18s ease;
+    text-align: center;
 }
 
 .forgot-password:hover {

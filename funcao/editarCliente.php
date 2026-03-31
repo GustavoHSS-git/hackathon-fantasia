@@ -42,7 +42,7 @@ if (!$cliente) {
     <input type="number" id="telefone" name="telefone" value="<?php echo $cliente['telefone']; ?>" required><br>
 
     <label for="cpfCliente">CPF:</label>
-    <input type="number" id="cpfCliente" name="cpfCliente" value="<?php echo $fantasia['cpfCliente']; ?>" required><br>
+    <input type="number" id="cpfCliente" name="cpfCliente" value="<?php echo $cliente['cpfCliente']; ?>" required><br>
 
     <button type="submit" name="salvar">Salvar Alterações</button>
 
@@ -58,20 +58,20 @@ if (isset($_POST['salvar'])) {
     $telefone = $_POST['telefone'];
     $cpfCliente = $_POST['cpfCliente'];
     $stmt = $conn->prepare("
-    UPDATE fantasia
+    UPDATE cliente
     SET nomeCliente = ?,
     email = ?,
     telefone = ?,
-    cpfCliente = ?,
+    cpfCliente = ?
     WHERE idCliente = ?
     ");
 
-    $stmt->bind_param("sssidi", $nome, $email, $telefone, $cpfCliente, $idCliente);
+    $stmt->bind_param("ssiii", $nome, $email, $telefone, $cpfCliente, $idCliente);
 
     $stmt->execute();
 
     echo "<script>
-    alert('Fantasia atualizada com sucesso!');
+    alert('Cliente atualizado com sucesso!');
     window.location.href = '../lista/cliente.php';
     </script>";
 
