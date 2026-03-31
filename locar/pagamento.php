@@ -110,17 +110,12 @@ Escolha a forma de pagamento:
 
 <br>
 
-<<<<<<< HEAD
 <div class="form-group">
 <h3>
 Pix
 <input type="radio" name="formaPagamento" value="Pix" required>
 </h3>
 </div>
-=======
-        <button type="submit" name="confirmarPagamento">Confirmar pagamento</button>
-        
->>>>>>> 977fbd4997acc0077b03131512bcea359e4afe75
 
 <div class="form-group">
 <h3>
@@ -169,13 +164,7 @@ Valor pago:
 
 R$
 
-<<<<<<< HEAD
 <?php echo $valorTotal; ?>
-=======
-    
-
-    <?php echo $valorTotal; ?>
->>>>>>> 977fbd4997acc0077b03131512bcea359e4afe75
 
 <br><br>
 
@@ -187,15 +176,11 @@ R$
 
 <?php endif; ?>
 
-<<<<<<< HEAD
 <a class="nva" href="loginCliente.php">
 Nova locação
 </a>
 
 </div>
-=======
-    </div>
->>>>>>> 977fbd4997acc0077b03131512bcea359e4afe75
 
 </body>
 </html>
