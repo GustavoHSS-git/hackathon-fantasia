@@ -25,9 +25,7 @@ $id = $_GET['id'];
 
     <button type="submit" name="excluir">Excluir</button>
 
-<a href="../lista/fantasia.php">
-    <button type="btn-cancelar">Cancelar</button>
-</a>
+    <button class="voltar"  href="#" onclick="history.back()">Cancelar</button>
 </form>
 
 </body>
