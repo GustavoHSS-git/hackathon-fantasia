@@ -6,15 +6,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const cpfError = document.getElementById('cpfError');
     const senhaError = document.getElementById('senhaError');
 
-    // 1. Função para alternar visibilidade da senha
+    
+
     if (togglePasswordBtn && passwordInput) {
-        togglePasswordBtn.addEventListener('click', (e) => {
-            e.preventDefault();
+        togglePasswordBtn.addEventListener('click', function() {
+            // Verifica o tipo atual do input
             const isPassword = passwordInput.type === 'password';
+            
+            // Troca entre 'password' e 'text'
             passwordInput.type = isPassword ? 'text' : 'password';
-            togglePasswordBtn.textContent = isPassword ? '👁️‍🗨️' : '👁️'; 
+            
+            // Troca o ícone (opcional: você pode usar classes do FontAwesome aqui)
+            this.textContent = isPassword ? '👁️‍🗨️' : '👁️'; 
         });
     }
+});
 
     // 2. Validação visual de CPF (ao sair do campo)
     if (cpfInput) {
@@ -56,10 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 showNotification('Preencha os campos corretamente! CPF deve ter 11 dígitos e senha no mínimo 6.', 'error');
             }
         });
-    }
-});
+    };
 
-// Função para exibir notificações visuais
+
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.style.cssText = `

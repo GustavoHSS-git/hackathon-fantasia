@@ -10,77 +10,49 @@
     <div class="container">
         <form id="loginForm" class="login-form" method="POST">
             <div class="titulo">
-            <div class="login-right">
-            <div class="login-box">
-        
-                <h2 id="login-title">Bem-avindo</h2>
-                <p class="login-subtitle">Faça login para continuar</p>
+                <div class="login-container">
+    <div class="login-right">
+        <div class="login-box">
+            <h2 id="login-title">Bem-vindo</h2>
+            <p class="login-subtitle">Faça login para continuar</p>
 
-                    <!-- Campo CPF -->
-                    <div class="form-group">
-                        <label for="cpf">CPF</label>
+            <form id="loginForm" class="login-form" method="POST">
+                <div class="form-group">
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+                    <span class="error-message" id="cpfError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <div class="password-wrapper">
                         <input 
-                            type="text" 
-                            id="cpf" 
-                            name="cpf" 
-                            placeholder="000.000.000-00"
-                            required
-                            aria-label="CPF"
-                        >
-                        <!-- Mensagem de erro (mostrada via JS ao validar) -->
-                        <span class="error-message" id="cpfError"></span>
-                    </div>
+                            type="password" 
+                            id="senha" 
+        name="senha" 
+        placeholder="••••••••"
+        required
+    >
+    <button type="button" class="toggle-password" id="togglePassword">
+        👁️
+    </button>
+</div>  
 
-                    <!-- Campo Senha -->
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <div class="password-wrapper">
-                            <input 
-                                type="password" 
-                                id="senha" 
-                                name="senha" 
-                                placeholder="••••••••"
-                                required
-                                aria-label="Senha"
-                            >
-                            <!-- Botão para mostrar/esconder senha (👁️) -->
-                            <button type="button" class="toggle-password" id="togglePassword">
-                                👁️
-                            </button>
-                        </div>
-                        <!-- Mensagem de erro (mostrada via JS ao validar) -->
-                        <span class="error-message" id="senhaError"></span>
-                    </div>
+                <button type="submit" class="btn-login">Entrar</button>
+            </form>
 
-                    <!-- Opções: Lembrar-me e Esqueci a Senha -->
-                    <div class="form-options">
-                        <div class="remember-me">
-                            <input type="checkbox" id="remember" name="remember">
-                            <label for="remember">Lembrar-me</label>
-                        </div>
-                        <!-- Link para recuperação de senha -->
-                        <a href="redefinir.php" class="forgot-password">Esqueci a senha</a>
-                    </div>
+            <a href="redefinir.php" class="forgot-password">Esqueci a senha</a>
+                </div>
 
-                    <!-- Botão de Entrar (Submit) -->
-                    <button type="submit" class="btn-login">
-                        <span>Entrar</span>
-                    </button>
-                </form>
-    </div>
-
-    <!-- ============================
-                     LINK DE CADASTRO
-                     ============================ -->
-                <p class="signup-text">
-                    Não tem uma conta? 
-                    <a href="../cadastros/cadFuncionario.php" class="signup-link">Cadastre-se</a>
-                </p>
-            </div>
+            <p class="signup-text">
+                Não tem uma conta? 
+                <a href="../cadastros/cadFuncionario.php" class="signup-link">Cadastre-se</a>
+            </p>
         </div>
     </div>
-    
-    <script src="login.js"></script>
+</div>
+           
+
 <?php
 
 // Reportar erros para ajudar a descobrir se o banco falhar

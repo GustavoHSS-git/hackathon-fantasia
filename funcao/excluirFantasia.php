@@ -25,7 +25,8 @@ $id = $_GET['id'];
 
     <button type="submit" name="excluir">Excluir</button>
 
-    <button class="voltar"  href="#" onclick="history.back()">Cancelar</button>
+
+    <button type="button" class="btn-cancelar" onclick="history.back();">Cancelar</button>
 </form>
 
 </body>
